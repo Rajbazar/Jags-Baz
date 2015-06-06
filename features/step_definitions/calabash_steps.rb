@@ -16,6 +16,8 @@ session="S1"
             tap_mark "nextArrow"
         elsif ops == "LoginButton"
             tap_mark "butLogin"
+        elsif ops == "MainMenu"
+            system("#{default_device.adb_command} shell input keyevent KEYCODE_ENTER")
         else
            tap_mark "#{ops.to_s}"
         end
@@ -30,6 +32,8 @@ session="S1"
   if $Configuration[session+"DeviceType"] == "Android"
         set_default_device($session[session])
         sleep 2
+  else
+    ios_connect(session)
 end
 end
 
@@ -122,4 +126,57 @@ session="S1"
     else
     ios_connect(session)
     end
+end
+
+##Change settings for DEV Server
+Then(/^Change settings for ([\w ]+)$/) do |settings|
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+      set_default_device($session[session])
+      sleep 3
+      query("* id:'etRegisterInfo'", {:setText => ""})
+      query("* id:'etRegisterInfo'", {:setText => "#12349"})
+      perform_action('press_user_action_button', 'next')
+      sleep 2
+      tap_mark "#{settings}"
+      sleep 2
+      tap_mark 'butUpdateServer'
+      sleep 2
+      tap_mark 'Yes'
+      start_test_server_in_background
+      sleep 5
+    else
+      ios_connect(session)
+    end
+end
+
+##Given user is Logged in Velocity app
+Then(/^user is Logged in Velocity app$/) do
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+      set_default_device($session[session])
+      sleep 5
+      if element_exists("* text:'Venues'")
+        puts "Element Found"
+      else
+        fail('User not logged in.')
+      end
+    else
+      ios_connect(session)
+    end  
+end
+
+##And Display AppVersion
+Then(/^Display text in ([\w ]+)$/) do |ops|
+  session="S1"
+  if $Configuration[session+"DeviceType"] == "Android"
+      set_default_device($session[session])
+      sleep 3
+      if ops == "AppVersion"
+        puts "App Version: " + query("* id:'tvVersion'",:text)[0].to_s
+      else
+      end       
+  else
+    ios_connect(session)
+  end  
 end
