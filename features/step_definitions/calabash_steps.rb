@@ -23,6 +23,15 @@ session="S1"
         end
   else
     ios_connect(session)
+    sleep 2
+    if ops == "SIGN UP"
+      tap_mark "SIGN UP"
+        elsif ops == "next"
+        elsif ops == "LoginButton"
+        elsif ops == "MainMenu"
+        else
+           tap_mark "#{ops.to_s}"
+        end
 end
 end
 
@@ -34,6 +43,8 @@ session="S1"
         sleep 2
   else
     ios_connect(session)
+    start_test_server_in_background
+    sleep 5
 end
 end
 
@@ -81,6 +92,18 @@ session="S1"
         end
     else
         ios_connect(session)
+        sleep 2
+        if verifyText == "signup screen"
+                 begin
+                 wait_for_element_exists("* text:'CREATE NEW ACCOUNT'")
+                 puts "Element Found"
+                 rescue
+                 screenshot_and_raise('Text Not Found')
+                 end
+        elsif verifyText == "Login successful popup"
+        elsif verifyText == "Incorrect details popup"
+        else
+        end
     end
 end
 
@@ -125,6 +148,39 @@ session="S1"
       end
     else
     ios_connect(session)
+    sleep 2
+    if ops == "Email"
+      touch(query("* UITextField")[0])
+      wait_for_keyboard
+      keyboard_enter_text("#{$Configuration["UserEmail"]}")
+      sleep 2
+      end
+      if ops == "Password"
+      touch(query("* UITextField")[2])
+      wait_for_keyboard
+      keyboard_enter_text("#{$Configuration["UserPassword"]}")
+      sleep 2
+      end
+      if ops == "IncorrectPassword"
+      end
+      if ops == "FirstName"
+      touch(query("* UITextField")[0])
+      wait_for_keyboard
+      keyboard_enter_text("#{$Configuration["FirstName"]}")
+      sleep 2
+      end
+      if ops == "LastName"
+      touch(query("* UITextField")[1])
+      wait_for_keyboard
+      keyboard_enter_text("#{$Configuration["LastName"]}")
+      sleep 2
+     end
+      if ops == "MobileNumber"
+      touch(query("* UITextField")[1])
+      wait_for_keyboard
+      keyboard_enter_text("#{$Configuration["MobileNumber"]}")
+      sleep 2
+      end
     end
 end
 

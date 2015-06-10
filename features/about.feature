@@ -5,6 +5,7 @@ Feature: About
 
   @Android @Velocity-200
   Scenario: Verify App Version
+    Given I am on Velocity app
     Given user is Logged in Velocity app
      And I tap on MainMenu
      And I wait for 3 seconds

@@ -22,10 +22,25 @@ Feature: My Account
      And I tap on next
      And I tap on next
 
+@IOS @Velocity-1100
+  Scenario: To create an account as a new user
+    Given I am on Velocity app
+     When I tap on SIGN UP
+      And Verify signup screen
+      And I enter Email
+      Then I enter MobileNumber
+      And I enter Password
+      And I tap on NEXT
+      And I enter FirstName
+      And I enter LastName
+      And I tap on NEXT
+      And I wait for 10 seconds
+      And I tap on SKIP
+
   @Android @Velocity-101
   Scenario: Test successful login
+  Given I am on Velocity app
     Then Clear app data
-    Given I am on Velocity app
     When I tap on LoginButton
     Then Change settings for DEV Server
     And I tap on LoginButton
@@ -37,8 +52,8 @@ Feature: My Account
 
   @Android @Velocity-102
   Scenario: Unsuccessful Login with username and wrong password
+  Given I am on Velocity app
     Then Clear app data
-    Given I am on Velocity app
      When I tap on LoginButton
       Then Change settings for DEV Server
       And I tap on LoginButton

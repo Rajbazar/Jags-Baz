@@ -1,4 +1,8 @@
 if $Configuration["S1DeviceType"] == "IOS" || $Configuration["S2DeviceType"] == "IOS"
+/Before do ('@Velocity-100')
+  ios_connect("S1")
+  start_test_server_in_background
+end/
 else
 require 'calabash-android/management/adb'
 require 'calabash-android/operations'

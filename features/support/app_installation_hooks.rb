@@ -5,9 +5,9 @@ $Configuration = YAML.load_file "setup.cfg"
 if $Configuration["S1DeviceType"] == "IOS" || $Configuration["S2DeviceType"] == "IOS"
   require 'calabash-cucumber/cucumber'
   def ios_connect(device_sessionid)
-ENV['DEVICE']="device" 
-    ENV['DEBUG']="1"    
-    ENV['DEVICE_ENDPOINT']=$Configuration[device_sessionid+"DeviceIP"]
+##ENV['DEVICE']="device" 
+    ##ENV['DEBUG']="1"    
+    ##ENV['DEVICE_ENDPOINT']=$Configuration[device_sessionid+"DeviceIP"]
     ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
