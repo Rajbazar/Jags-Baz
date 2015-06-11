@@ -50,6 +50,18 @@ Feature: My Account
     And I tap on next
     Then Verify Login successful popup
 
+  @IOS @Velocity-1101
+  Scenario: Test successful login
+  Given I am on Velocity app
+    Then Clear app data
+    When I tap on LoginButton
+    Then Change settings for DEVELOPMENT
+    And I tap on LoginButton
+    And I enter Email
+    And I enter PASSWORD
+    And I tap on NEXT
+    Then Verify Login successful 
+
   @Android @Velocity-102
   Scenario: Unsuccessful Login with username and wrong password
   Given I am on Velocity app

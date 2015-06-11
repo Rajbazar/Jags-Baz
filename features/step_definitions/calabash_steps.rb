@@ -28,9 +28,17 @@ session="S1"
       tap_mark "SIGN UP"
         elsif ops == "next"
         elsif ops == "LoginButton"
+          tap_mark "LOG IN"
         elsif ops == "MainMenu"
         else
            tap_mark "#{ops.to_s}"
+           sleep 2
+            if element_exists("* text:'YOUR LOCATION'")
+              tap_mark 'btnLocation'
+              sleep 2
+              tap_mark 'SKIP'
+              sleep 2
+            end
         end
 end
 end
@@ -59,6 +67,17 @@ session="S1"
         start_test_server_in_background()
     else
       ios_connect(session)
+      sleep 2
+    if element_does_not_exist("* text:'SIGN UP'")
+      tap_mark 'btnMenu'
+      sleep 2
+      tap_mark 'VIEW ACCOUNT'
+      sleep 2
+      tap_mark 'EDIT ACCOUNT DETAILS'
+      sleep 2
+      tap_mark 'btnLogout'
+      sleep 2
+    end
     end
 end               
 ##And Verify signup screen
@@ -100,7 +119,15 @@ session="S1"
                  rescue
                  screenshot_and_raise('Text Not Found')
                  end
-        elsif verifyText == "Login successful popup"
+        elsif verifyText == "Login successful"
+          begin
+          wait_for_element_exists("* {text CONTAINS 'VENUES'}")
+          puts "Element Found"
+          sleep 2
+          tap_mark "SKIP"
+          rescue
+            screenshot_and_raise('Text Not Found')
+          end
         elsif verifyText == "Incorrect details popup"
         else
         end
@@ -161,6 +188,12 @@ session="S1"
       keyboard_enter_text("#{$Configuration["UserPassword"]}")
       sleep 2
       end
+      if ops == "PASSWORD"
+      touch(query("* UITextField")[1])
+      wait_for_keyboard
+      keyboard_enter_text("#{$Configuration["UserPassword"]}")
+      sleep 2
+      end
       if ops == "IncorrectPassword"
       end
       if ops == "FirstName"
@@ -203,6 +236,23 @@ Then(/^Change settings for ([\w ]+)$/) do |settings|
       sleep 5
     else
       ios_connect(session)
+      sleep 2
+      touch(query("* UITextField")[0])
+      wait_for_keyboard
+      keyboard_enter_text("#12349")
+      tap_mark "NEXT"
+      sleep 4
+      tap_mark "#{settings}"
+      sleep 2
+      begin
+      tap_mark "OK"
+      tap_mark "OK"
+      sleep 2
+      rescue
+      end
+      shutdown_test_server
+      sleep 2
+      start_test_server_in_background
     end
 end
 

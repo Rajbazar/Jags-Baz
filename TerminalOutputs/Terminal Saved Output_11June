@@ -1,0 +1,4196 @@
+Last login: Thu Jun 11 20:37:11 on console
+Prateeks-MacBook-Pro:~ Prateek$ cd Desktop/Jags-Baz/
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ calabash-ios console
+Running irb...
+/Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/bin/calabash-ios-build.rb:59: warning: Insecure world writable dir /usr in PATH, mode 040777
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+irb(main):001:0> require 'yaml'
+true
+irb(main):002:0> $Configuration = YAML.load_file "setup.cfg"
+{
+    "S1DeviceType" => "IOS",
+        "S1Device" => "iPhone 6 (8.1 Simulator)",
+      "S1DeviceIP" => "",
+      "iOSAppPath" => "/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/003870DF-B6E0-4B26-A572-B9CEE3DAFFA0/VelocityConsumerApp-cal.app",
+     "iOSBundleID" => "com.paywithvelocity.enterprise.VelocityConsumerApp-cal",
+       "UserEmail" => "rajbazar@gmail.com",
+    "UserPassword" => "dennisz123",
+       "FirstName" => "Raj",
+        "LastName" => "Bazar",
+    "MobileNumber" => "7884443373"
+}
+irb(main):003:0> start_test_server_in_background
+RuntimeError: Unable to find *.xcodeproj in /Users/Prateek/Desktop/Jags-Baz
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launch/simulator_launcher.rb:106:in `derived_data_dir_for_project'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launch/simulator_launcher.rb:223:in `app_bundle_or_raise'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:554:in `relaunch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:849:in `start_test_server_in_background'
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0> ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
+NameError: undefined local variable or method `device_sessionid' for main:Object
+	from (irb):4
+	from /usr/bin/irb:12:in `<main>'
+irb(main):005:0>     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
+"com.paywithvelocity.enterprise.VelocityConsumerApp-cal"
+irb(main):006:0>     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/003870DF-B6E0-4B26-A572-B9CEE3DAFFA0/VelocityConsumerApp-cal.app"
+irb(main):007:0> start_test_server_in_background
+RunLoop::IncompatibleArchitecture: Binary at:
+/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/003870DF-B6E0-4B26-A572-B9CEE3DAFFA0/VelocityConsumerApp-cal.app/VelocityConsumerApp-cal
+does not contain a compatible architecture for target device.
+Expected 'i386' but found ["x86_64"].
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:71:in `expect_compatible_arch'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:119:in `expect_compatible_simulator_architecture'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:214:in `run_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:793:in `run'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:737:in `block in new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:610:in `relaunch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:849:in `start_test_server_in_background'
+	from (irb):7
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> 
+irb(main):009:0* 
+irb(main):010:0* 
+irb(main):011:0* device_sessionid="S1"
+"S1"
+irb(main):012:0> ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
+"iPhone 6 (8.1 Simulator)"
+irb(main):013:0>     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
+"com.paywithvelocity.enterprise.VelocityConsumerApp-cal"
+irb(main):014:0>     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/003870DF-B6E0-4B26-A572-B9CEE3DAFFA0/VelocityConsumerApp-cal.app"
+irb(main):015:0> start_test_server_in_background
+	Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-497-1gp0w4w/run_loop.out
+irb(main):016:0>  tap_mark "LOG IN"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7ff4a3ee7600; frame = (0 617; 187.5 50); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7ff4a3eddf40>>",
+                       "label" => "LOG IN",
+                       "frame" => {
+                 "y" => 617,
+                 "x" => 0,
+             "width" => 187.5,
+            "height" => 50
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 617,
+            "center_x" => 93.75,
+            "center_y" => 642,
+                   "x" => 0,
+               "width" => 187.5,
+              "height" => 50
+        }
+    }
+]
+irb(main):017:0> start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-497-b31txl/run_loop.out
+irb(main):018:0> ap
+ap
+irb(main):018:0> ap
+ap
+irb(main):018:0> ap
+ap
+irb(main):018:0> m
+macro                         methods                      
+map                           minimum_date_time_from_picker
+maximum_date_time_from_picker module                       
+method                        move_wheel                   
+method_missing               
+irb(main):018:0> m
+macro                         methods                      
+map                           minimum_date_time_from_picker
+maximum_date_time_from_picker module                       
+method                        move_wheel                   
+method_missing               
+irb(main):018:0> minimum_date_time_from_picker
+minimum_date_time_from_picker
+irb(main):018:0> minimum_date_time_from_picker
+minimum_date_time_from_picker
+irb(main):018:0> minimum_date_time_from_picker
+minimum_date_time_from_picker
+irb(main):018:0> minimum_date_time_from_picker
+minimum_date_time_from_picker
+irb(main):018:0> la
+label      lambda     landscape? launcher  
+irb(main):018:0> la
+label      lambda     landscape? launcher  
+irb(main):018:0> la
+label      lambda     landscape? launcher  
+irb(main):018:0> la
+label      lambda     landscape? launcher  
+irb(main):018:0> launcher
+launcher
+irb(main):018:0> launcher
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-497-b31txl/run_loop.out
+irb(main):019:0> send
+send                   send_app_to_background send_uia_command      
+irb(main):019:0> send
+send                   send_app_to_background send_uia_command      
+irb(main):019:0> send_app_to_background
+ArgumentError: wrong number of arguments (0 for 1)
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:636:in `send_app_to_background'
+	from (irb):19
+	from /usr/bin/irb:12:in `<main>'
+irb(main):020:0> send_app_to_background(2)
+Retrying.. Errno::ECONNREFUSED: (Connection refused - connect(2) (http://localhost:37265))
+Retrying.. Errno::ECONNREFUSED: (Connection refused - connect(2) (http://localhost:37265))
+Failing... Errno::ECONNREFUSED
+Errno::ECONNREFUSED: Connection refused - connect(2) (http://localhost:37265)
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:803:in `initialize'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:803:in `new'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:803:in `create_socket'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:752:in `block in connect'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/timeout.rb:66:in `timeout'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/timeout.rb:97:in `timeout'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:751:in `connect'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:609:in `query'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:164:in `query'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:1083:in `do_get_block'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:887:in `block in do_request'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:981:in `protect_keep_alive_disconnected'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:886:in `do_request'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:774:in `request'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:684:in `post'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:58:in `block in make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:50:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:50:in `make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:29:in `http'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/connection_helpers.rb:11:in `http'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:28:in `uia'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:382:in `uia_send_app_to_background'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:74:in `send_app_to_background'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:637:in `send_app_to_background'
+	from (irb):20
+	from /usr/bin/irb:12:in `<main>'irb(main):021:0> 
+irb(main):022:0* 
+irb(main):023:0* 
+irb(main):024:0* 
+irb(main):025:0* shutdown_test_server
+nil
+irb(main):026:0> start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-497-7s3xg6/run_loop.out
+irb(main):027:0> touch(query("* UITextField")[0])
+true
+irb(main):028:0>       wait_for_keyboard
+^CRetrying.. Errno::ECONNREFUSED: (Connection refused - connect(2) (http://localhost:37265))
+^CIRB::Abort: abort then interrupt!
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:74:in `call'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:74:in `sleep'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:74:in `rescue in block in make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:52:in `block in make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:50:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:50:in `make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:29:in `http'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/connection_helpers.rb:11:in `http'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/failure_helpers.rb:24:in `screenshot'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/failure_helpers.rb:52:in `screenshot_embed'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/failure_helpers.rb:69:in `screenshot_and_raise'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/wait_helpers.rb:423:in `handle_error_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/wait_helpers.rb:116:in `rescue in wait_for'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/wait_helpers.rb:102:in `wait_for'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/keyboard_helpers.rb:167:in `wait_for_keyboard'
+	from (irb):28
+	from /usr/bin/irb:12:in `<main>'irb(main):029:0> ^C
+irb(main):029:0> ^C
+irb(main):029:0> 
+irb(main):030:0* 
+irb(main):031:0* touch(query("* UITextField")[0])
+
+^CIRB::Abort: abort then interrupt!
+^C/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:420:in `raise': abort then interrupt! (IRB::Abort)
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:420:in `irb_abort'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:607:in `signal_handle'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:392:in `block in start'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:526:in `call'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:526:in `write'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:526:in `print'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:526:in `block (2 levels) in eval_input'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:624:in `signal_status'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:489:in `block in eval_input'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb/ruby-lex.rb:247:in `block (2 levels) in each_top_level_statement'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb/ruby-lex.rb:233:in `loop'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb/ruby-lex.rb:233:in `block in each_top_level_statement'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb/ruby-lex.rb:232:in `catch'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb/ruby-lex.rb:232:in `each_top_level_statement'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:488:in `eval_input'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:397:in `block in start'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:396:in `catch'
+	from /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/irb.rb:396:in `start'
+	from /usr/bin/irb:12:in `<main>'
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ 
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ 
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ calabash-ios console
+Running irb...
+/Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/bin/calabash-ios-build.rb:59: warning: Insecure world writable dir /usr in PATH, mode 040777
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+irb(main):001:0> require 'yaml'
+true
+irb(main):002:0> $Configuration = YAML.load_file "setup.cfg"
+{
+    "S1DeviceType" => "IOS",
+        "S1Device" => "iPhone 6 (8.1 Simulator)",
+      "S1DeviceIP" => "",
+      "iOSAppPath" => "/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/81D3796B-2912-4BC8-BA64-632878B01976/VelocityConsumerApp-cal.app",
+     "iOSBundleID" => "com.paywithvelocity.enterprise.VelocityConsumerApp-cal",
+       "UserEmail" => "rajbazar@gmail.com",
+    "UserPassword" => "dennisz123",
+       "FirstName" => "Raj",
+        "LastName" => "Bazar",
+    "MobileNumber" => "7884443373"
+}
+irb(main):003:0> ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
+NameError: undefined local variable or method `device_sessionid' for main:Object
+	from (irb):3
+	from /usr/bin/irb:12:in `<main>'
+irb(main):004:0>     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
+"com.paywithvelocity.enterprise.VelocityConsumerApp-cal"
+irb(main):005:0>     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/81D3796B-2912-4BC8-BA64-632878B01976/VelocityConsumerApp-cal.app"
+irb(main):006:0> start_test_server_in_background
+RunLoop::IncompatibleArchitecture: Binary at:
+/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/81D3796B-2912-4BC8-BA64-632878B01976/VelocityConsumerApp-cal.app/VelocityConsumerApp-cal
+does not contain a compatible architecture for target device.
+Expected 'i386' but found ["x86_64"].
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:71:in `expect_compatible_arch'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:119:in `expect_compatible_simulator_architecture'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:214:in `run_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:793:in `run'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:737:in `block in new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:610:in `relaunch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:849:in `start_test_server_in_background'
+	from (irb):6
+	from /usr/bin/irb:12:in `<main>'
+irb(main):007:0> device_sessionid="S1"
+"S1"
+irb(main):008:0> ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
+"iPhone 6 (8.1 Simulator)"
+irb(main):009:0>     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
+"com.paywithvelocity.enterprise.VelocityConsumerApp-cal"
+irb(main):010:0>     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/81D3796B-2912-4BC8-BA64-632878B01976/VelocityConsumerApp-cal.app"
+irb(main):011:0> start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-2229-17gv0n8/run_loop.out
+irb(main):012:0> touch(query("* UITextField")[0])
+true
+irb(main):013:0>       wait_for_keyboard
+0
+irb(main):014:0>       keyboard_enter_text("#12349")
+nil
+irb(main):015:0> clear_text
+clear_text
+irb(main):015:0> clear_text
+clear_text
+irb(main):015:0> clear_text
+clear_text
+irb(main):015:0> clear_text
+clear_text
+irb(main):015:0> $Configuration = YAML.load_file "setup.cfg"
+{
+    "S1DeviceType" => "IOS",
+        "S1Device" => "iPhone 6 (8.1 Simulator)",
+      "S1DeviceIP" => "",
+      "iOSAppPath" => "/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app",
+     "iOSBundleID" => "com.paywithvelocity.enterprise.VelocityConsumerApp-cal",
+       "UserEmail" => "rajbazar@gmail.com",
+    "UserPassword" => "dennisz123",
+       "FirstName" => "Raj",
+        "LastName" => "Bazar",
+    "MobileNumber" => "7884443373"
+}
+irb(main):016:0> start_test_server_in_background
+RuntimeError: plist '/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/81D3796B-2912-4BC8-BA64-632878B01976/VelocityConsumerApp-cal.app/Info.plist' does not exist - could not read
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/plist_buddy.rb:126:in `build_plist_cmd'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/plist_buddy.rb:20:in `plist_read'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:114:in `binary_path'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:84:in `info'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:65:in `expect_compatible_arch'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:119:in `expect_compatible_simulator_architecture'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:214:in `run_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:793:in `run'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:737:in `block in new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:610:in `relaunch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:849:in `start_test_server_in_background'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
+"iPhone 6 (8.1 Simulator)"
+irb(main):018:0>     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
+"com.paywithvelocity.enterprise.VelocityConsumerApp-cal"
+irb(main):019:0>     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app"
+irb(main):020:0> start_test_server_in_background
+RuntimeError: plist '/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app/Info.plist' does not exist - could not read
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/plist_buddy.rb:126:in `build_plist_cmd'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/plist_buddy.rb:20:in `plist_read'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:114:in `binary_path'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:84:in `info'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:65:in `expect_compatible_arch'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:119:in `expect_compatible_simulator_architecture'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:214:in `run_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:793:in `run'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:737:in `block in new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:610:in `relaunch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:849:in `start_test_server_in_background'
+	from (irb):20
+	from /usr/bin/irb:12:in `<main>'
+irb(main):021:0> device_sessionid
+"S1"
+irb(main):022:0> exit
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ calabash-ios console
+Running irb...
+/Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/bin/calabash-ios-build.rb:59: warning: Insecure world writable dir /usr in PATH, mode 040777
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+irb(main):001:0> device_sessionid="S1"
+"S1"
+irb(main):002:0> require 'yaml'
+true
+irb(main):003:0> $Configuration = YAML.load_file "setup.cfg"
+{
+    "S1DeviceType" => "IOS",
+        "S1Device" => "iPhone 6 (8.1 Simulator)",
+      "S1DeviceIP" => "",
+      "iOSAppPath" => "/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app",
+     "iOSBundleID" => "com.paywithvelocity.enterprise.VelocityConsumerApp-cal",
+       "UserEmail" => "rajbazar@gmail.com",
+    "UserPassword" => "dennisz123",
+       "FirstName" => "Raj",
+        "LastName" => "Bazar",
+    "MobileNumber" => "7884443373"
+}
+irb(main):004:0> ENV['DEVICE_TARGET']=$Configuration[device_sessionid+"Device"]
+"iPhone 6 (8.1 Simulator)"
+irb(main):005:0>     ENV['BUNDLE_ID']=$Configuration["iOSBundleID"]
+"com.paywithvelocity.enterprise.VelocityConsumerApp-cal"
+irb(main):006:0>     ENV["APP_BUNDLE_PATH"]=$Configuration["iOSAppPath"]
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app"
+irb(main):007:0>   end
+SyntaxError: (irb):7: syntax error, unexpected keyword_end
+	from /usr/bin/irb:12:in `<main>'
+irb(main):008:0> start_test_server_in_background
+RuntimeError: plist '/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app/Info.plist' does not exist - could not read
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/plist_buddy.rb:126:in `build_plist_cmd'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/plist_buddy.rb:20:in `plist_read'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:114:in `binary_path'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:84:in `info'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/lipo.rb:65:in `expect_compatible_arch'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:119:in `expect_compatible_simulator_architecture'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:214:in `run_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/run_loop-1.2.0/lib/run_loop/core.rb:793:in `run'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:737:in `block in new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:735:in `new_run_loop'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/launcher.rb:610:in `relaunch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:849:in `start_test_server_in_background'
+	from (irb):8
+	from /usr/bin/irb:12:in `<main>'
+irb(main):009:0> ENV["APP_BUNDLE_PATH"]="/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app"
+"/Users/Prateek/Library/Developer/CoreSimulator/Devices/1141EE48-711F-4BE8-AF56-1FD1F6249DC8/data/Containers/Bundle/Application/25EF023D-ED36-482D-8376-41AA4FD143D8/VelocityConsumerApp-cal.app"
+irb(main):010:0> start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-3453-fzijl0/run_loop.out
+irb(main):011:0> touch(query("* UITextField")[0])
+true
+irb(main):012:0>       wait_for_keyboard
+0
+irb(main):013:0>       keyboard_enter_text("#12349")
+nil
+irb(main):014:0> tap_mark "NEXT"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UINavigationButton: 0x7ff784e90ce0; frame = (336 8.5; 31 30); opaque = NO; layer = <CALayer: 0x7ff784ecfec0>>",
+                       "label" => "NEXT",
+                       "frame" => {
+                 "y" => 8.5,
+                 "x" => 336,
+             "width" => 31,
+            "height" => 30
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UINavigationButton",
+                        "rect" => {
+                   "y" => 28.5,
+            "center_x" => 351.5,
+            "center_y" => 43.5,
+                   "x" => 336,
+               "width" => 31,
+              "height" => 30
+        }
+    }
+]
+irb(main):015:0> tap_mark "DEVELOPMENT"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7ff784f5f5c0; frame = (8 15; 307 21); text = 'DEVELOPMENT'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; tag = 1; layer = <_UILabelLayer: 0x7ff784f5f720>>",
+                       "label" => "DEVELOPMENT",
+                       "frame" => {
+                 "y" => 15,
+                 "x" => 8,
+             "width" => 307,
+            "height" => 21
+        },
+        "accessibilityElement" => true,
+                       "value" => "DEVELOPMENT",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "DEVELOPMENT",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 246,
+            "center_x" => 187.5,
+            "center_y" => 256.5,
+                   "x" => 34,
+               "width" => 307,
+              "height" => 21
+        }
+    }
+]
+irb(main):016:0> tap_mark "OK"
+RuntimeError: Could not parse response ''; the app has probably crashed
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:33:in `rescue in uia'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:30:in `uia'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:430:in `uia_handle_command'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:177:in `uia_tap_offset'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:93:in `query_action'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:15:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:1127:in `query_action_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:177:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:937:in `tap_mark'
+	from (irb):16
+	from /usr/bin/irb:12:in `<main>'
+irb(main):017:0> tap_mark "OK"
+^CIRB::Abort: abort then interrupt!
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:975:in `call'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:975:in `gets'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:975:in `read_body_chunked'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient/session.rb:701:in `get_body'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:1088:in `do_get_block'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:887:in `block in do_request'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:981:in `protect_keep_alive_disconnected'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:886:in `do_request'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:774:in `request'
+	from /Library/Ruby/Gems/2.0.0/gems/httpclient-2.3.4.1/lib/httpclient.rb:684:in `post'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:58:in `block in make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:50:in `times'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:50:in `make_http_request'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/http_helpers.rb:29:in `http'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/connection_helpers.rb:11:in `http'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:28:in `uia'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:430:in `uia_handle_command'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:177:in `uia_tap_offset'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:93:in `query_action'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:15:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:1127:in `query_action_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:177:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:937:in `tap_mark'
+	from (irb):17
+	from /usr/bin/irb:12:in `<main>'irb(main):018:0> ^C
+irb(main):018:0> start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-3453-pql5zv/run_loop.out
+irb(main):019:0> tap_mark "OK"
+[
+    [0] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 270,
+            "height" => 44
+        },
+        "accessibilityElement" => true,
+                       "class" => "_UIAlertControllerActionView",
+                       "label" => "OK",
+                 "description" => "<_UIAlertControllerActionView: 0x7f86ad797b30; frame = (0 0; 270 44); Action = <UIAlertAction: 0x7f86ad6de460 Title = \"OK\" Descriptive = \"(null)\" Image = 0x0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 367,
+            "center_x" => 187.5,
+            "center_y" => 389,
+                   "x" => 52.5,
+               "width" => 270,
+              "height" => 44
+        }
+    }
+]
+irb(main):020:0> tap_mark "OK"
+RuntimeError: Could not parse response ''; the app has probably crashed
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:33:in `rescue in uia'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:30:in `uia'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:430:in `uia_handle_command'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/uia.rb:177:in `uia_tap_offset'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:93:in `query_action'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/actions/instruments_actions.rb:15:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:1127:in `query_action_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:177:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:937:in `tap_mark'
+	from (irb):20
+	from /usr/bin/irb:12:in `<main>'
+irb(main):021:0> shutdown_test_server
+nil
+irb(main):022:0> start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-3453-cr60xa/run_loop.out
+irb(main):023:0> touch(query("* UITextField")[0])
+true
+irb(main):024:0>       wait_for_keyboard
+1
+irb(main):025:0>       keyboard_enter_text("#12349")
+nil
+irb(main):026:0>       tap_mark "NEXT"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UINavigationButton: 0x7fe5fb63b510; frame = (336 8.5; 31 30); opaque = NO; layer = <CALayer: 0x7fe5fb707ee0>>",
+                       "label" => "NEXT",
+                       "frame" => {
+                 "y" => 8.5,
+                 "x" => 336,
+             "width" => 31,
+            "height" => 30
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UINavigationButton",
+                        "rect" => {
+                   "y" => 28.5,
+            "center_x" => 351.5,
+            "center_y" => 43.5,
+                   "x" => 336,
+               "width" => 31,
+              "height" => 30
+        }
+    }
+]
+irb(main):027:0>       sleep 2
+2
+irb(main):028:0>       tap_mark "#{settings}"
+NameError: undefined local variable or method `settings' for main:Object
+	from (irb):28
+	from /usr/bin/irb:12:in `<main>'
+irb(main):029:0>       sleep 2
+2
+irb(main):030:0>       begin
+irb(main):031:1*       tap_mark "OK"
+irb(main):032:1>       tap_mark "OK"
+irb(main):033:1>       sleep 2
+irb(main):034:1>       rescue
+irb(main):035:1>       end
+Screenshot at screenshot_0.png
+nil
+irb(main):036:0>       shutdown_test_server
+nil
+irb(main):037:0>       sleep 2
+2
+irb(main):038:0>       start_test_server_in_background
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-3453-12mvky6/run_loop.out
+irb(main):039:0> settings="DEVELOPMENT"
+"DEVELOPMENT"
+irb(main):040:0> touch(query("* UITextField")[0])
+true
+irb(main):041:0>       wait_for_keyboard
+1
+irb(main):042:0>       keyboard_enter_text("#12349")
+nil
+irb(main):043:0>       tap_mark "NEXT"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UINavigationButton: 0x7fa0faebab40; frame = (336 8.5; 31 30); opaque = NO; layer = <CALayer: 0x7fa0fae15030>>",
+                       "label" => "NEXT",
+                       "frame" => {
+                 "y" => 8.5,
+                 "x" => 336,
+             "width" => 31,
+            "height" => 30
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UINavigationButton",
+                        "rect" => {
+                   "y" => 28.5,
+            "center_x" => 351.5,
+            "center_y" => 43.5,
+                   "x" => 336,
+               "width" => 31,
+              "height" => 30
+        }
+    }
+]
+irb(main):044:0>       sleep 2
+2
+irb(main):045:0>       tap_mark "#{settings}"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fa0faf6a710; frame = (8 15; 307 21); text = 'DEVELOPMENT'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; tag = 1; layer = <_UILabelLayer: 0x7fa0faf7ca10>>",
+                       "label" => "DEVELOPMENT",
+                       "frame" => {
+                 "y" => 15,
+                 "x" => 8,
+             "width" => 307,
+            "height" => 21
+        },
+        "accessibilityElement" => true,
+                       "value" => "DEVELOPMENT",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "DEVELOPMENT",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 246,
+            "center_x" => 187.5,
+            "center_y" => 256.5,
+                   "x" => 34,
+               "width" => 307,
+              "height" => 21
+        }
+    }
+]
+irb(main):046:0>       sleep 2
+2
+irb(main):047:0>       begin
+irb(main):048:1*       tap_mark "OK"
+irb(main):049:1>       tap_mark "OK"
+irb(main):050:1>       sleep 2
+irb(main):051:1>       rescue
+irb(main):052:1>       end
+nil
+irb(main):053:0>       shutdown_test_server
+nil
+irb(main):054:0>       sleep 2
+2
+irb(main):055:0>       start_test_server_in_background
+
+Calabash::Cucumber::Launcher: Launch Method instruments
+Log file: /var/folders/bk/66z0d5kx2w38lw300cmgt_h00000gn/T/run_loop20150611-3453-n5pe8t/run_loop.out
+irb(main):056:0> 
+irb(main):057:0* element_exists("* text:'USE MY LOCATION'")
+false
+irb(main):058:0> element_exists("* text:'USE MY LOCATION'")
+false
+irb(main):059:0> query("*",:text)
+[
+    [ 0] "*****",
+    [ 1] "*****",
+    [ 2] "*****",
+    [ 3] "*****",
+    [ 4] "*****",
+    [ 5] "*****",
+    [ 6] "*****",
+    [ 7] "",
+    [ 8] "LOCATING YOU...",
+    [ 9] "*****",
+    [10] "Velocity needs your location to allow you to check in and to find the best venues around you",
+    [11] "*****",
+    [12] "*****",
+    [13] "*****",
+    [14] "*****",
+    [15] "*****",
+    [16] "*****",
+    [17] "*****",
+    [18] "*****",
+    [19] "*****",
+    [20] "LOG IN",
+    [21] "*****",
+    [22] "YOUR LOCATION"
+]
+irb(main):060:0> element_exists("* text:'YOUR LOCATION'")
+true
+irb(main):061:0> tap_mark 'YOUR LOCATIO'
+Screenshot at screenshot_1.png
+RuntimeError: touch could not find view: 'view marked:'YOUR LOCATIO'', args: {:query=>"view marked:'YOUR LOCATIO'"}
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/failure_helpers.rb:70:in `screenshot_and_raise'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/map.rb:119:in `assert_map_results'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:1130:in `query_action_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:177:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:937:in `tap_mark'
+	from (irb):61
+	from /usr/bin/irb:12:in `<main>'
+irb(main):062:0> tap_mark 'YOUR LOCATION'
+[
+    [0] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => "YOUR LOCATION",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 20,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 44
+        },
+        "accessibilityElement" => false,
+                       "class" => "UINavigationBar",
+                       "label" => nil,
+                 "description" => "<UINavigationBar: 0x7fbe8b6550d0; frame = (0 20; 375 44); opaque = NO; autoresize = W; gestureRecognizers = <NSArray: 0x7fbe8b6659f0>; layer = <CALayer: 0x7fbe8b6554e0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 20,
+            "center_x" => 187.5,
+            "center_y" => 42,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 44
+        }
+    }
+]
+irb(main):063:0> query("*",:text)
+[
+    [ 0] "*****",
+    [ 1] "*****",
+    [ 2] "*****",
+    [ 3] "*****",
+    [ 4] "*****",
+    [ 5] "*****",
+    [ 6] "*****",
+    [ 7] "",
+    [ 8] "LOCATING YOU...",
+    [ 9] "*****",
+    [10] "Velocity needs your location to allow you to check in and to find the best venues around you",
+    [11] "*****",
+    [12] "*****",
+    [13] "*****",
+    [14] "*****",
+    [15] "*****",
+    [16] "*****",
+    [17] "*****",
+    [18] "*****",
+    [19] "*****",
+    [20] "LOG IN",
+    [21] "*****",
+    [22] "YOUR LOCATION"
+]
+irb(main):064:0> tap_mark "LOG IN"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e012ac0; frame = (0 10.5; 19 21.5); text = 'LOG IN'; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8ded1ee0>>",
+                       "label" => "LOG IN",
+                       "frame" => {
+                 "y" => 10.5,
+                 "x" => 0,
+             "width" => 19,
+            "height" => 21.5
+        },
+        "accessibilityElement" => true,
+                       "value" => "LOG IN",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "LOG IN",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 30.5,
+            "center_x" => 9.5,
+            "center_y" => 41.25,
+                   "x" => 0,
+               "width" => 19,
+              "height" => 21.5
+        }
+    }
+]
+irb(main):065:0> query("*")[11]
+{
+                      "id" => nil,
+             "description" => "<UIButton: 0x7fbe8dedf900; frame = (105 335; 165 35); clipsToBounds = YES; opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8dedadc0>>",
+                   "label" => "btnLocation",
+                   "frame" => {
+             "y" => 335,
+             "x" => 105,
+         "width" => 165,
+        "height" => 35
+    },
+    "accessibilityElement" => true,
+                   "value" => nil,
+                   "alpha" => 1,
+                 "enabled" => true,
+                 "visible" => 1,
+                "selected" => false,
+                   "class" => "UIButton",
+                    "rect" => {
+               "y" => 335,
+        "center_x" => 187.5,
+        "center_y" => 352.5,
+               "x" => 105,
+           "width" => 165,
+          "height" => 35
+    }
+}
+irb(main):066:0> 
+irb(main):067:0* 
+irb(main):068:0* tap_mark 'btnLocation'
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8dedf900; frame = (105 335; 165 35); clipsToBounds = YES; opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8dedadc0>>",
+                       "label" => "btnLocation",
+                       "frame" => {
+                 "y" => 335,
+                 "x" => 105,
+             "width" => 165,
+            "height" => 35
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 335,
+            "center_x" => 187.5,
+            "center_y" => 352.5,
+                   "x" => 105,
+               "width" => 165,
+              "height" => 35
+        }
+    }
+]
+irb(main):069:0> tap_mark 'SKIP'
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8e100d40; frame = (8 629; 359 30); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8dffad40>>",
+                       "label" => "SKIP",
+                       "frame" => {
+                 "y" => 629,
+                 "x" => 8,
+             "width" => 359,
+            "height" => 30
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 629,
+            "center_x" => 187.5,
+            "center_y" => 644,
+                   "x" => 8,
+               "width" => 359,
+              "height" => 30
+        }
+    }
+]
+irb(main):070:0> query("*")[0]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "UIWindow",
+                   "label" => nil,
+             "description" => "<UIWindow: 0x7fbe8b661c50; frame = (0 0; 375 667); autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8b6682d0>; layer = <UIWindowLayer: 0x7fbe8b6550b0>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):071:0> query("*")[1]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "UILayoutContainerView",
+                   "label" => nil,
+             "description" => "<UILayoutContainerView: 0x7fbe8df2e200; frame = (0 0; 375 667); autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8df13840>; layer = <CALayer: 0x7fbe8de50580>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):072:0> query("*")[2]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "UINavigationTransitionView",
+                   "label" => nil,
+             "description" => "<UINavigationTransitionView: 0x7fbe8da48c50; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; layer = <CALayer: 0x7fbe8dac29b0>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):073:0> query("*")[3]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "UIViewControllerWrapperView",
+                   "label" => nil,
+             "description" => "<UIViewControllerWrapperView: 0x7fbe8b4c6f10; frame = (0 0; 375 667); autoresize = W+H; layer = <CALayer: 0x7fbe8b4c6c50>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):074:0> query("*")[4]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "IIViewDeckView",
+                   "label" => nil,
+             "description" => "<IIViewDeckView: 0x7fbe8b4b9fe0; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8e099e10>; layer = <CALayer: 0x7fbe8b4b0950>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):075:0> touch(query("*")[4])
+true
+irb(main):076:0> touch(query("*")[3])
+true
+irb(main):077:0> touch(query("*")[2])
+true
+irb(main):078:0> touch(query("*")[1])
+true
+irb(main):079:0> touch(query("*")[0])
+true
+irb(main):080:0> query("*")
+[
+    [ 0] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIWindow",
+                       "label" => nil,
+                 "description" => "<UIWindow: 0x7fbe8b661c50; frame = (0 0; 375 667); autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8b6682d0>; layer = <UIWindowLayer: 0x7fbe8b6550b0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 1] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UILayoutContainerView",
+                       "label" => nil,
+                 "description" => "<UILayoutContainerView: 0x7fbe8df2e200; frame = (0 0; 375 667); autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8df13840>; layer = <CALayer: 0x7fbe8de50580>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 2] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UINavigationTransitionView",
+                       "label" => nil,
+                 "description" => "<UINavigationTransitionView: 0x7fbe8da48c50; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; layer = <CALayer: 0x7fbe8dac29b0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 3] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIViewControllerWrapperView",
+                       "label" => nil,
+                 "description" => "<UIViewControllerWrapperView: 0x7fbe8b4c6f10; frame = (0 0; 375 667); autoresize = W+H; layer = <CALayer: 0x7fbe8b4c6c50>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 4] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "IIViewDeckView",
+                       "label" => nil,
+                 "description" => "<IIViewDeckView: 0x7fbe8b4b9fe0; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8e099e10>; layer = <CALayer: 0x7fbe8b4b0950>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 5] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8b4c6b40; frame = (0 0; 375 667); autoresize = W+H; layer = <CALayer: 0x7fbe8b4c68a0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 6] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UILayoutContainerView",
+                       "label" => nil,
+                 "description" => "<UILayoutContainerView: 0x7fbe8e1154d0; frame = (0 0; 375 667); autoresize = W+H; layer = <CALayer: 0x7fbe8e1155d0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 7] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITransitionView",
+                       "label" => nil,
+                 "description" => "<UITransitionView: 0x7fbe8e11cbf0; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; layer = <CALayer: 0x7fbe8e11c8d0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 8] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIViewControllerWrapperView",
+                       "label" => nil,
+                 "description" => "<UIViewControllerWrapperView: 0x7fbe8b4d35c0; frame = (0 0; 375 667); autoresize = W+H; layer = <CALayer: 0x7fbe8b4d3350>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [ 9] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UILayoutContainerView",
+                       "label" => nil,
+                 "description" => "<UILayoutContainerView: 0x7fbe8b4c62c0; frame = (0 0; 375 667); autoresize = W+H; gestureRecognizers = <NSArray: 0x7fbe8b4d1db0>; layer = <CALayer: 0x7fbe8b4b7e50>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [10] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UINavigationTransitionView",
+                       "label" => nil,
+                 "description" => "<UINavigationTransitionView: 0x7fbe8b4ce9c0; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; layer = <CALayer: 0x7fbe8b4ced10>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [11] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 667
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIViewControllerWrapperView",
+                       "label" => nil,
+                 "description" => "<UIViewControllerWrapperView: 0x7fbe8e5ab420; frame = (0 0; 375 667); autoresize = RM+BM; layer = <CALayer: 0x7fbe8e5abc60>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 333.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 667
+        }
+    },
+    [12] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 618
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e035b00; frame = (0 0; 375 618); autoresize = RM+BM; gestureRecognizers = <NSArray: 0x7fbe8dffad10>; layer = <CALayer: 0x7fbe8e035bd0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 309,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 618
+        }
+    },
+    [13] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 64,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 48
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e035bf0; frame = (0 64; 375 48); autoresize = RM+BM; layer = <CALayer: 0x7fbe8e035cc0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 64,
+            "center_x" => 187.5,
+            "center_y" => 88,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 48
+        }
+    },
+    [14] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 47,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 1
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e035ce0; frame = (0 47; 375 1); autoresize = RM+BM; layer = <CALayer: 0x7fbe8e035db0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 111,
+            "center_x" => 187.5,
+            "center_y" => 111.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 1
+        }
+    },
+    [15] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e036460; frame = (8 13; 359 21); text = 'Which venue are you in?'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e0365c0>>",
+                       "label" => "Which venue are you in?",
+                       "frame" => {
+                 "y" => 13,
+                 "x" => 8,
+             "width" => 359,
+            "height" => 21
+        },
+        "accessibilityElement" => true,
+                       "value" => "Which venue are you in?",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "Which venue are you in?",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 77,
+            "center_x" => 187.5,
+            "center_y" => 87.5,
+                   "x" => 8,
+               "width" => 359,
+              "height" => 21
+        }
+    },
+    [16] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 111,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 507
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITableView",
+                       "label" => nil,
+                 "description" => "<UITableView: 0x7fbe8d1dca00; frame = (0 111; 375 507); clipsToBounds = YES; autoresize = RM+BM; gestureRecognizers = <NSArray: 0x7fbe8e045f90>; layer = <CALayer: 0x7fbe8e045f70>; contentOffset: {0, 0}; contentSize: {375, 11218.5}>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 111,
+            "center_x" => 187.5,
+            "center_y" => 364.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 507
+        }
+    },
+    [17] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => -60,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 60
+        },
+        "accessibilityElement" => false,
+                       "class" => "SSARefreshCircleContainerView",
+                       "label" => nil,
+                 "description" => "<SSARefreshCircleContainerView: 0x7fbe8e03fdd0; frame = (0 -60; 375 60); layer = <CALayer: 0x7fbe8e0400e0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 51,
+            "center_x" => 187.5,
+            "center_y" => 81,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 60
+        }
+    },
+    [18] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 5,
+                 "x" => 167.5,
+             "width" => 40,
+            "height" => 40
+        },
+        "accessibilityElement" => false,
+                       "class" => "SSACircleView",
+                       "label" => nil,
+                 "description" => "<SSACircleView: 0x7fbe8e040400; frame = (167.5 5; 40 40); layer = <CALayer: 0x7fbe8e040720>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 56,
+            "center_x" => 187.5,
+            "center_y" => 76,
+                   "x" => 167.5,
+               "width" => 40,
+              "height" => 40
+        }
+    },
+    [19] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 447
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITableViewWrapperView",
+                       "label" => nil,
+                 "description" => "<UITableViewWrapperView: 0x7fbe8e0483c0; frame = (0 0; 375 447); gestureRecognizers = <NSArray: 0x7fbe8e0487f0>; layer = <CALayer: 0x7fbe8e0486f0>; contentOffset: {0, 0}; contentSize: {375, 447}>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 111,
+            "center_x" => 187.5,
+            "center_y" => 334.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 447
+        }
+    },
+    [20] {
+                          "id" => nil,
+                 "description" => "<VTYCheckInTableViewCell: 0x7fbe8e024da0; baseClass = UITableViewCell; frame = (0 5; 375 333.5); clipsToBounds = YES; autoresize = W; layer = <CALayer: 0x7fbe8e0a0ec0>>",
+                       "label" => nil,
+                       "frame" => {
+                 "y" => 5,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 333.5
+        },
+        "accessibilityElement" => false,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => nil,
+                       "class" => "VTYCheckInTableViewCell",
+                    "selected" => false,
+                        "rect" => {
+                   "y" => 116,
+            "center_x" => 187.5,
+            "center_y" => 282.75,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 333.5
+        }
+    },
+    [21] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 333.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITableViewCellContentView",
+                       "label" => nil,
+                 "description" => "<UITableViewCellContentView: 0x7fbe8e023d90; frame = (0 0; 375 333.5); opaque = NO; gestureRecognizers = <NSArray: 0x7fbe8e052910>; layer = <CALayer: 0x7fbe8e0a3520>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 116,
+            "center_x" => 187.5,
+            "center_y" => 282.75,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 333.5
+        }
+    },
+    [22] {
+                          "id" => nil,
+                 "description" => "<UITableViewLabel: 0x7fbe8e110840; frame = (0 0; 0 0); userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e1235f0>>",
+                       "label" => nil,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 0,
+            "height" => 0
+        },
+        "accessibilityElement" => false,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => nil,
+                       "class" => "UITableViewLabel",
+                        "rect" => {
+                   "y" => 116,
+            "center_x" => 0,
+            "center_y" => 116,
+                   "x" => 0,
+               "width" => 0,
+              "height" => 0
+        }
+    },
+    [23] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 0,
+            "height" => 0
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8b4b8d40; frame = (0 0; 0 0); userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8b4d11b0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 116,
+            "center_x" => 0,
+            "center_y" => 116,
+                   "x" => 0,
+               "width" => 0,
+              "height" => 0
+        }
+    },
+    [24] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 4,
+                 "x" => 6,
+             "width" => 363,
+            "height" => 326.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e038930; frame = (6 4; 363 326.5); clipsToBounds = YES; autoresize = RM+BM; layer = <CALayer: 0x7fbe8dee8a60>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 120,
+            "center_x" => 187.5,
+            "center_y" => 283.25,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 326.5
+        }
+    },
+    [25] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 363,
+            "height" => 326.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e04ab70; frame = (0 0; 363 326.5); clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e0a58c0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 120,
+            "center_x" => 187.5,
+            "center_y" => 283.25,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 326.5
+        }
+    },
+    [26] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 228.5,
+                 "x" => 0,
+             "width" => 363,
+            "height" => 98
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e0b87e0; frame = (0 228.5; 363 98); autoresize = RM+BM; tag = 3689; layer = <CALayer: 0x7fbe8e020770>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 348.5,
+            "center_x" => 187.5,
+            "center_y" => 397.5,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 98
+        }
+    },
+    [27] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e02c680; frame = (8 5; 348 65); text = 'CARLUCCIOS'; clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e0afd80>>",
+                       "label" => "CARLUCCIOS",
+                       "frame" => {
+                 "y" => 5,
+                 "x" => 8,
+             "width" => 348,
+            "height" => 65
+        },
+        "accessibilityElement" => true,
+                       "value" => "CARLUCCIOS",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "CARLUCCIOS",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 353.5,
+            "center_x" => 188,
+            "center_y" => 386,
+                   "x" => 14,
+               "width" => 348,
+              "height" => 65
+        }
+    },
+    [28] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "pinsmall",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 70,
+                 "x" => 10,
+             "width" => 15,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8de4c130; frame = (10 70; 15 20); autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e0c0f60>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 418.5,
+            "center_x" => 23.5,
+            "center_y" => 428.5,
+                   "x" => 16,
+               "width" => 15,
+              "height" => 20
+        }
+    },
+    [29] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e04ce20; frame = (33 70; 320 20); text = '0.37 miles - St. Christop...'; clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e021c10>>",
+                       "label" => "0.37 miles - St. Christophers Place London W1U 1AY",
+                       "frame" => {
+                 "y" => 70,
+                 "x" => 33,
+             "width" => 320,
+            "height" => 20
+        },
+        "accessibilityElement" => true,
+                       "value" => "0.37 miles - St. Christophers Place\nLondon\nW1U 1AY",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "0.37 miles - St. Christophers Place\nLondon\nW1U 1AY",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 418.5,
+            "center_x" => 199,
+            "center_y" => 428.5,
+                   "x" => 39,
+               "width" => 320,
+              "height" => 20
+        }
+    },
+    [30] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 232,
+                 "x" => 15,
+             "width" => 305,
+            "height" => 1
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UITableViewCellSeparatorView",
+                       "label" => nil,
+                 "description" => "<_UITableViewCellSeparatorView: 0x7fbe8e045e30; frame = (15 232; 305 1); layer = <CALayer: 0x7fbe8e0adf70>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 348,
+            "center_x" => 167.5,
+            "center_y" => 348.5,
+                   "x" => 15,
+               "width" => 305,
+              "height" => 1
+        }
+    },
+    [31] {
+                          "id" => nil,
+                 "description" => "<VTYCheckInTableViewCell: 0x7fbe8dff84a0; baseClass = UITableViewCell; frame = (0 338.5; 375 160); clipsToBounds = YES; autoresize = W; layer = <CALayer: 0x7fbe8dfde1f0>>",
+                       "label" => nil,
+                       "frame" => {
+                 "y" => 338.5,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 160
+        },
+        "accessibilityElement" => false,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => nil,
+                       "class" => "VTYCheckInTableViewCell",
+                    "selected" => false,
+                        "rect" => {
+                   "y" => 449.5,
+            "center_x" => 187.5,
+            "center_y" => 529.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 160
+        }
+    },
+    [32] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 160
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITableViewCellContentView",
+                       "label" => nil,
+                 "description" => "<UITableViewCellContentView: 0x7fbe8e185ff0; frame = (0 0; 375 160); opaque = NO; gestureRecognizers = <NSArray: 0x7fbe8e10a950>; layer = <CALayer: 0x7fbe8dfde1d0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 449.5,
+            "center_x" => 187.5,
+            "center_y" => 529.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 160
+        }
+    },
+    [33] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 4,
+                 "x" => 6,
+             "width" => 363,
+            "height" => 153
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e153e40; frame = (6 4; 363 153); clipsToBounds = YES; autoresize = RM+BM; layer = <CALayer: 0x7fbe8dfd56b0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 453.5,
+            "center_x" => 187.5,
+            "center_y" => 530,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 153
+        }
+    },
+    [34] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 363,
+            "height" => 153
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8dacde40; frame = (0 0; 363 153); clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e10b130>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 453.5,
+            "center_x" => 187.5,
+            "center_y" => 530,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 153
+        }
+    },
+    [35] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 55,
+                 "x" => 0,
+             "width" => 363,
+            "height" => 98
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8dff54b0; frame = (0 55; 363 98); autoresize = RM+BM; tag = 3689; layer = <CALayer: 0x7fbe8dfeab30>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 508.5,
+            "center_x" => 187.5,
+            "center_y" => 557.5,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 98
+        }
+    },
+    [36] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e115290; frame = (8 5; 348 65); text = 'AMIKA'; clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8dfec6b0>>",
+                       "label" => "AMIKA",
+                       "frame" => {
+                 "y" => 5,
+                 "x" => 8,
+             "width" => 348,
+            "height" => 65
+        },
+        "accessibilityElement" => true,
+                       "value" => "AMIKA",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "AMIKA",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 513.5,
+            "center_x" => 188,
+            "center_y" => 546,
+                   "x" => 14,
+               "width" => 348,
+              "height" => 65
+        }
+    },
+    [37] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "pinsmall",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 70,
+                 "x" => 10,
+             "width" => 15,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8dfec7c0; frame = (10 70; 15 20); autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8b645a90>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 578.5,
+            "center_x" => 23.5,
+            "center_y" => 588.5,
+                   "x" => 16,
+               "width" => 15,
+              "height" => 20
+        }
+    },
+    [38] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e13e9c0; frame = (33 70; 320 20); text = '0.45 miles - 43 South Mol...'; clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8da811d0>>",
+                       "label" => "0.45 miles - 43 South Molton Street London W1K 5RS",
+                       "frame" => {
+                 "y" => 70,
+                 "x" => 33,
+             "width" => 320,
+            "height" => 20
+        },
+        "accessibilityElement" => true,
+                       "value" => "0.45 miles - 43 South Molton Street\nLondon\nW1K 5RS",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "0.45 miles - 43 South Molton Street\nLondon\nW1K 5RS",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 578.5,
+            "center_x" => 199,
+            "center_y" => 588.5,
+                   "x" => 39,
+               "width" => 320,
+              "height" => 20
+        }
+    },
+    [39] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8dffa200; frame = (0 0; 375 5); layer = <CALayer: 0x7fbe8dffa2d0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 111,
+            "center_x" => 187.5,
+            "center_y" => 113.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 5
+        }
+    },
+    [40] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => "VENUES",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 20,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 44
+        },
+        "accessibilityElement" => false,
+                       "class" => "UINavigationBar",
+                       "label" => nil,
+                 "description" => "<UINavigationBar: 0x7fbe8e059390; frame = (0 20; 375 44); opaque = NO; autoresize = W; gestureRecognizers = <NSArray: 0x7fbe8e017110>; layer = <CALayer: 0x7fbe8e098520>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 20,
+            "center_x" => 187.5,
+            "center_y" => 42,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 44
+        }
+    },
+    [41] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => -20,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 64
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UINavigationBarBackground",
+                       "label" => nil,
+                 "description" => "<_UINavigationBarBackground: 0x7fbe8e05b410; frame = (0 -20; 375 64); autoresize = W; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e098260>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 32,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 64
+        }
+    },
+    [42] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 64
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UIBackdropView",
+                       "label" => nil,
+                 "description" => "<_UIBackdropView: 0x7fbe8dfce5e0; frame = (0 0; 375 64); opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <_UIBackdropViewLayer: 0x7fbe8dfc2a70>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 32,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 64
+        }
+    },
+    [43] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 64
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UIBackdropEffectView",
+                       "label" => nil,
+                 "description" => "<_UIBackdropEffectView: 0x7fbe8dfced70; frame = (0 0; 375 64); clipsToBounds = YES; opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <CABackdropLayer: 0x7fbe8dfc2a10>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 32,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 64
+        }
+    },
+    [44] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 64
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8dfcee50; frame = (0 0; 375 64); opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8dfcef20>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 32,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 64
+        }
+    },
+    [45] {
+                       "alpha" => 0.8500000238418579,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 64
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8dfcf400; frame = (0 0; 375 64); alpha = 0.85; opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8dfcfec0>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 32,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 64
+        }
+    },
+    [46] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 64,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 0.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8de51790; frame = (0 64; 375 0.5); userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e05b390>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 64,
+            "center_x" => 187.5,
+            "center_y" => 64.25,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 0.5
+        }
+    },
+    [47] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8b4d37a0; frame = (11 4; 36 36); opaque = NO; layer = <CALayer: 0x7fbe8b4d1f40>>",
+                       "label" => "btnMenu",
+                       "frame" => {
+                 "y" => 4,
+                 "x" => 11,
+             "width" => 36,
+            "height" => 36
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 24,
+            "center_x" => 29,
+            "center_y" => 42,
+                   "x" => 11,
+               "width" => 36,
+              "height" => 36
+        }
+    },
+    [48] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "btnMenu",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 8,
+                 "x" => 8,
+             "width" => 20,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e1549b0; frame = (8 8; 20 20); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e154ab0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 32,
+            "center_x" => 29,
+            "center_y" => 42,
+                   "x" => 19,
+               "width" => 20,
+              "height" => 20
+        }
+    },
+    [49] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8dfe64d0; frame = (55 4; 36 36); opaque = NO; layer = <CALayer: 0x7fbe8dfe66b0>>",
+                       "label" => "btnHelp",
+                       "frame" => {
+                 "y" => 4,
+                 "x" => 55,
+             "width" => 36,
+            "height" => 36
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 24,
+            "center_x" => 73,
+            "center_y" => 42,
+                   "x" => 55,
+               "width" => 36,
+              "height" => 36
+        }
+    },
+    [50] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "btnHelp",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 8,
+                 "x" => 8,
+             "width" => 20,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e155020; frame = (8 8; 20 20); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e155120>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 32,
+            "center_x" => 73,
+            "center_y" => 42,
+                   "x" => 63,
+               "width" => 20,
+              "height" => 20
+        }
+    },
+    [51] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 8,
+                 "x" => 159.5,
+             "width" => 56,
+            "height" => 27
+        },
+        "accessibilityElement" => true,
+                       "class" => "UINavigationItemView",
+                       "label" => "VENUES",
+                 "description" => "<UINavigationItemView: 0x7fbe8e059be0; frame = (159.5 8; 56 27); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e098020>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 28,
+            "center_x" => 187.5,
+            "center_y" => 41.5,
+                   "x" => 159.5,
+               "width" => 56,
+              "height" => 27
+        }
+    },
+    [52] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e059cf0; frame = (0 5; 56 19.5); text = 'VENUES'; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e059e50>>",
+                       "label" => "VENUES",
+                       "frame" => {
+                 "y" => 5,
+                 "x" => 0,
+             "width" => 56,
+            "height" => 19.5
+        },
+        "accessibilityElement" => true,
+                       "value" => "VENUES",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "VENUES",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 33,
+            "center_x" => 187.5,
+            "center_y" => 42.75,
+                   "x" => 159.5,
+               "width" => 56,
+              "height" => 19.5
+        }
+    },
+    [53] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8e6f2750; frame = (321.5 11; 37.5 22); opaque = NO; layer = <CALayer: 0x7fbe8e6f2930>>",
+                       "label" => nil,
+                       "frame" => {
+                 "y" => 11,
+                 "x" => 321.5,
+             "width" => 37.5,
+            "height" => 22
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 340.25,
+            "center_y" => 42,
+                   "x" => 321.5,
+               "width" => 37.5,
+              "height" => 22
+        }
+    },
+    [54] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 37.2578125,
+            "height" => 22
+        },
+        "accessibilityElement" => false,
+                       "class" => "VTYCoinViewHolder",
+                       "label" => nil,
+                 "description" => "<VTYCoinViewHolder: 0x7fbe8f6e0b20; frame = (0 0; 37.2578 22); autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8f6dff40>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 340.12890625,
+            "center_y" => 42,
+                   "x" => 321.5,
+               "width" => 37.2578125,
+              "height" => 22
+        }
+    },
+    [55] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 20,
+            "height" => 19
+        },
+        "accessibilityElement" => false,
+                       "class" => "VTYProgressCoin",
+                       "label" => nil,
+                 "description" => "<VTYProgressCoin: 0x7fbe8f6e1e30; frame = (0 0; 20 19); autoresize = W+H; layer = <CALayer: 0x7fbe8f6e0460>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 331.5,
+            "center_y" => 40.5,
+                   "x" => 321.5,
+               "width" => 20,
+              "height" => 19
+        }
+    },
+    [56] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 20,
+            "height" => 19
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8f6e1f10; frame = (0 0; 20 19); autoresize = RM+BM; layer = <CALayer: 0x7fbe8f6dfb60>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 331.5,
+            "center_y" => 40.5,
+                   "x" => 321.5,
+               "width" => 20,
+              "height" => 19
+        }
+    },
+    [57] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 20,
+            "height" => 19
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e0d8fb0; frame = (0 0; 20 19); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e0f11c0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 331.5,
+            "center_y" => 40.5,
+                   "x" => 321.5,
+               "width" => 20,
+              "height" => 19
+        }
+    },
+    [58] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8f6e1530; frame = (3 -5; 46 30); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8f6dfc60>>",
+                       "label" => nil,
+                       "frame" => {
+                 "y" => -5,
+                 "x" => 3,
+             "width" => 46,
+            "height" => 30
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 26,
+            "center_x" => 347.5,
+            "center_y" => 41,
+                   "x" => 324.5,
+               "width" => 46,
+              "height" => 30
+        }
+    },
+    [59] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8f6e0bf0; frame = (30 0; 42 21); text = '0'; clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8f6dfdc0>>",
+                       "label" => "0",
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 30,
+             "width" => 42,
+            "height" => 21
+        },
+        "accessibilityElement" => true,
+                       "value" => "0",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "0",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 372.5,
+            "center_y" => 41.5,
+                   "x" => 351.5,
+               "width" => 42,
+              "height" => 21
+        }
+    },
+    [60] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 618,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBar",
+                       "label" => nil,
+                 "description" => "<UITabBar: 0x7fbe8df50640; frame = (0 618; 375 49); autoresize = W+TM; layer = <CALayer: 0x7fbe8b643a20>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [61] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => -0.5,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 0.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e041830; frame = (0 -0.5; 375 0.5); autoresize = W; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e040fb0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 617.5,
+            "center_x" => 187.5,
+            "center_y" => 617.75,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 0.5
+        }
+    },
+    [62] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UITabBarBackgroundView",
+                       "label" => nil,
+                 "description" => "<_UITabBarBackgroundView: 0x7fbe8e096d30; frame = (0 0; 375 49); autoresize = W; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e097070>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [63] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UIBackdropView",
+                       "label" => nil,
+                 "description" => "<_UIBackdropView: 0x7fbe8e04b0e0; frame = (0 0; 375 49); opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <_UIBackdropViewLayer: 0x7fbe8e04b570>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [64] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UIBackdropEffectView",
+                       "label" => nil,
+                 "description" => "<_UIBackdropEffectView: 0x7fbe8e053080; frame = (0 0; 375 49); clipsToBounds = YES; opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <CABackdropLayer: 0x7fbe8e04b710>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [65] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e053160; frame = (0 0; 375 49); opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e053230>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [66] {
+                       "alpha" => 0.8500000238418579,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e0537a0; frame = (0 0; 375 49); alpha = 0.85; opaque = NO; autoresize = W+H; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e053870>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [67] {
+                       "alpha" => 1,
+                     "enabled" => true,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 125,
+            "height" => 5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIView",
+                       "label" => nil,
+                 "description" => "<UIView: 0x7fbe8e0997e0; frame = (0 0; 125 5); tag = 2999; layer = <CALayer: 0x7fbe8e099580>>",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 62.5,
+            "center_y" => 620.5,
+                   "x" => 0,
+               "width" => 125,
+              "height" => 5
+        }
+    },
+    [68] {
+                          "id" => nil,
+                 "description" => "<UITabBarButton: 0x7fbe8e115ed0; frame = (2 1; 121 48); opaque = NO; layer = <CALayer: 0x7fbe8e116e60>>",
+                       "label" => "CHECK IN",
+                       "frame" => {
+                 "y" => 1,
+                 "x" => 2,
+             "width" => 121,
+            "height" => 48
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UITabBarButton",
+                        "rect" => {
+                   "y" => 619,
+            "center_x" => 62.5,
+            "center_y" => 643,
+                   "x" => 2,
+               "width" => 121,
+              "height" => 48
+        }
+    },
+    [69] {
+                          "id" => nil,
+                 "description" => "<UITabBarButtonLabel: 0x7fbe8e116460; frame = (36 35; 49 12); text = 'CHECK IN'; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e116830>>",
+                       "label" => "CHECK IN",
+                       "frame" => {
+                 "y" => 35,
+                 "x" => 36,
+             "width" => 49,
+            "height" => 12
+        },
+        "accessibilityElement" => true,
+                       "value" => "CHECK IN",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "CHECK IN",
+                       "class" => "UITabBarButtonLabel",
+                        "rect" => {
+                   "y" => 654,
+            "center_x" => 62.5,
+            "center_y" => 660,
+                   "x" => 38,
+               "width" => 49,
+              "height" => 12
+        }
+    },
+    [70] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "tabCheckIn",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 6,
+                 "x" => 48.5,
+             "width" => 24,
+            "height" => 24
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBarSwappableImageView",
+                       "label" => nil,
+                 "description" => "<UITabBarSwappableImageView: 0x7fbe8e117410; frame = (48.5 6; 24 24); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e116c00>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 625,
+            "center_x" => 62.5,
+            "center_y" => 637,
+                   "x" => 50.5,
+               "width" => 24,
+              "height" => 24
+        }
+    },
+    [71] {
+                          "id" => nil,
+                 "description" => "<UITabBarButton: 0x7fbe8e11b580; frame = (127 1; 121 48); opaque = NO; layer = <CALayer: 0x7fbe8e11bc80>>",
+                       "label" => "DISCOVER",
+                       "frame" => {
+                 "y" => 1,
+                 "x" => 127,
+             "width" => 121,
+            "height" => 48
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UITabBarButton",
+                        "rect" => {
+                   "y" => 619,
+            "center_x" => 187.5,
+            "center_y" => 643,
+                   "x" => 127,
+               "width" => 121,
+              "height" => 48
+        }
+    },
+    [72] {
+                          "id" => nil,
+                 "description" => "<UITabBarButtonLabel: 0x7fbe8e11b910; frame = (34.5 35; 52 12); text = 'DISCOVER'; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e11b7c0>>",
+                       "label" => "DISCOVER",
+                       "frame" => {
+                 "y" => 35,
+                 "x" => 34.5,
+             "width" => 52,
+            "height" => 12
+        },
+        "accessibilityElement" => true,
+                       "value" => "DISCOVER",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "DISCOVER",
+                       "class" => "UITabBarButtonLabel",
+                        "rect" => {
+                   "y" => 654,
+            "center_x" => 187.5,
+            "center_y" => 660,
+                   "x" => 161.5,
+               "width" => 52,
+              "height" => 12
+        }
+    },
+    [73] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "tabDiscover",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 6,
+                 "x" => 48.5,
+             "width" => 24,
+            "height" => 24
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBarSwappableImageView",
+                       "label" => nil,
+                 "description" => "<UITabBarSwappableImageView: 0x7fbe8e11bdb0; frame = (48.5 6; 24 24); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e11bca0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 625,
+            "center_x" => 187.5,
+            "center_y" => 637,
+                   "x" => 175.5,
+               "width" => 24,
+              "height" => 24
+        }
+    },
+    [74] {
+                          "id" => nil,
+                 "description" => "<UITabBarButton: 0x7fbe8e1205b0; frame = (252 1; 121 48); opaque = NO; layer = <CALayer: 0x7fbe8e120cc0>>",
+                       "label" => "REWARDS",
+                       "frame" => {
+                 "y" => 1,
+                 "x" => 252,
+             "width" => 121,
+            "height" => 48
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UITabBarButton",
+                        "rect" => {
+                   "y" => 619,
+            "center_x" => 312.5,
+            "center_y" => 643,
+                   "x" => 252,
+               "width" => 121,
+              "height" => 48
+        }
+    },
+    [75] {
+                          "id" => nil,
+                 "description" => "<UITabBarButtonLabel: 0x7fbe8e120960; frame = (35 35; 50.5 12); text = 'REWARDS'; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e1207f0>>",
+                       "label" => "REWARDS",
+                       "frame" => {
+                 "y" => 35,
+                 "x" => 35,
+             "width" => 50.5,
+            "height" => 12
+        },
+        "accessibilityElement" => true,
+                       "value" => "REWARDS",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "REWARDS",
+                       "class" => "UITabBarButtonLabel",
+                        "rect" => {
+                   "y" => 654,
+            "center_x" => 312.25,
+            "center_y" => 660,
+                   "x" => 287,
+               "width" => 50.5,
+              "height" => 12
+        }
+    },
+    [76] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "rewards",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 6,
+                 "x" => 48,
+             "width" => 24,
+            "height" => 24
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBarSwappableImageView",
+                       "label" => nil,
+                 "description" => "<UITabBarSwappableImageView: 0x7fbe8e120df0; frame = (48 6; 24 24); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e120ce0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 625,
+            "center_x" => 312,
+            "center_y" => 637,
+                   "x" => 300,
+               "width" => 24,
+              "height" => 24
+        }
+    }
+]
+irb(main):081:0> query("*", :class)
+[
+    [ 0] nil,
+    [ 1] nil,
+    [ 2] nil,
+    [ 3] nil,
+    [ 4] nil,
+    [ 5] nil,
+    [ 6] nil,
+    [ 7] nil,
+    [ 8] nil,
+    [ 9] nil,
+    [10] nil,
+    [11] nil,
+    [12] nil,
+    [13] nil,
+    [14] nil,
+    [15] nil,
+    [16] nil,
+    [17] nil,
+    [18] nil,
+    [19] nil,
+    [20] nil,
+    [21] nil,
+    [22] nil,
+    [23] nil,
+    [24] nil,
+    [25] nil,
+    [26] nil,
+    [27] nil,
+    [28] nil,
+    [29] nil,
+    [30] nil,
+    [31] nil,
+    [32] nil,
+    [33] nil,
+    [34] nil,
+    [35] nil,
+    [36] nil,
+    [37] nil,
+    [38] nil,
+    [39] nil,
+    [40] nil,
+    [41] nil,
+    [42] nil,
+    [43] nil,
+    [44] nil,
+    [45] nil,
+    [46] nil,
+    [47] nil,
+    [48] nil,
+    [49] nil,
+    [50] nil,
+    [51] nil,
+    [52] nil,
+    [53] nil,
+    [54] nil,
+    [55] nil,
+    [56] nil,
+    [57] nil,
+    [58] nil,
+    [59] nil,
+    [60] nil,
+    [61] nil,
+    [62] nil,
+    [63] nil,
+    [64] nil,
+    [65] nil,
+    [66] nil,
+    [67] nil,
+    [68] nil,
+    [69] nil,
+    [70] nil,
+    [71] nil,
+    [72] nil,
+    [73] nil,
+    [74] nil,
+    [75] nil,
+    [76] nil
+]
+irb(main):082:0> 
+irb(main):083:0* 
+irb(main):084:0* query("*", label)
+ArgumentError: wrong number of arguments (0 for 1)
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:898:in `label'
+	from (irb):84
+	from /usr/bin/irb:12:in `<main>'
+irb(main):085:0> query("*", :label)
+[
+    [ 0] "*****",
+    [ 1] "*****",
+    [ 2] "*****",
+    [ 3] "*****",
+    [ 4] "*****",
+    [ 5] "*****",
+    [ 6] "*****",
+    [ 7] "*****",
+    [ 8] "*****",
+    [ 9] "*****",
+    [10] "*****",
+    [11] "*****",
+    [12] "*****",
+    [13] "*****",
+    [14] "*****",
+    [15] "*****",
+    [16] "*****",
+    [17] "*****",
+    [18] "*****",
+    [19] "*****",
+    [20] "*****",
+    [21] "*****",
+    [22] "*****",
+    [23] "*****",
+    [24] "*****",
+    [25] "*****",
+    [26] "*****",
+    [27] "*****",
+    [28] "*****",
+    [29] "*****",
+    [30] "*****",
+    [31] "*****",
+    [32] "*****",
+    [33] "*****",
+    [34] "*****",
+    [35] "*****",
+    [36] "*****",
+    [37] "*****",
+    [38] "*****",
+    [39] "*****",
+    [40] "*****",
+    [41] "*****",
+    [42] "*****",
+    [43] "*****",
+    [44] "*****",
+    [45] "*****",
+    [46] "*****",
+    [47] "*****",
+    [48] "*****",
+    [49] "*****",
+    [50] "*****",
+    [51] "*****",
+    [52] "*****",
+    [53] "*****",
+    [54] "*****",
+    [55] "*****",
+    [56] "*****",
+    [57] "*****",
+    [58] "*****",
+    [59] "*****",
+    [60] "*****",
+    [61] "*****",
+    [62] "*****",
+    [63] "*****",
+    [64] "*****",
+    [65] "*****",
+    [66] "*****",
+    [67] "*****",
+    [68] "*****",
+    [69] "*****",
+    [70] "*****",
+    [71] "*****",
+    [72] "*****",
+    [73] "*****",
+    [74] "*****",
+    [75] "*****",
+    [76] "*****"
+]
+irb(main):086:0> query("*", :text)
+[
+    [ 0] "*****",
+    [ 1] "*****",
+    [ 2] "*****",
+    [ 3] "*****",
+    [ 4] "*****",
+    [ 5] "*****",
+    [ 6] "*****",
+    [ 7] "*****",
+    [ 8] "*****",
+    [ 9] "*****",
+    [10] "*****",
+    [11] "*****",
+    [12] "*****",
+    [13] "*****",
+    [14] "*****",
+    [15] "Which venue are you in?",
+    [16] "*****",
+    [17] "*****",
+    [18] "*****",
+    [19] "*****",
+    [20] nil,
+    [21] "*****",
+    [22] nil,
+    [23] "*****",
+    [24] "*****",
+    [25] "*****",
+    [26] "*****",
+    [27] "CARLUCCIOS",
+    [28] "*****",
+    [29] "0.37 miles - St. Christophers Place\nLondon\nW1U 1AY",
+    [30] "*****",
+    [31] nil,
+    [32] "*****",
+    [33] "*****",
+    [34] "*****",
+    [35] "*****",
+    [36] "AMIKA",
+    [37] "*****",
+    [38] "0.45 miles - 43 South Molton Street\nLondon\nW1K 5RS",
+    [39] "*****",
+    [40] "*****",
+    [41] "*****",
+    [42] "*****",
+    [43] "*****",
+    [44] "*****",
+    [45] "*****",
+    [46] "*****",
+    [47] "*****",
+    [48] "*****",
+    [49] "*****",
+    [50] "*****",
+    [51] "*****",
+    [52] "VENUES",
+    [53] "*****",
+    [54] "*****",
+    [55] "*****",
+    [56] "*****",
+    [57] "*****",
+    [58] "*****",
+    [59] "0",
+    [60] "*****",
+    [61] "*****",
+    [62] "*****",
+    [63] "*****",
+    [64] "*****",
+    [65] "*****",
+    [66] "*****",
+    [67] "*****",
+    [68] "*****",
+    [69] "CHECK IN",
+    [70] "*****",
+    [71] "*****",
+    [72] "DISCOVER",
+    [73] "*****",
+    [74] "*****",
+    [75] "REWARDS",
+    [76] "*****"
+]
+irb(main):087:0> query("*")[11]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "UIViewControllerWrapperView",
+                   "label" => nil,
+             "description" => "<UIViewControllerWrapperView: 0x7fbe8e5ab420; frame = (0 0; 375 667); autoresize = RM+BM; layer = <CALayer: 0x7fbe8e5abc60>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):088:0> query("*")[10]
+{
+                   "alpha" => 1,
+                 "enabled" => true,
+                      "id" => nil,
+                 "visible" => 1,
+                   "frame" => {
+             "y" => 0,
+             "x" => 0,
+         "width" => 375,
+        "height" => 667
+    },
+    "accessibilityElement" => false,
+                   "class" => "UINavigationTransitionView",
+                   "label" => nil,
+             "description" => "<UINavigationTransitionView: 0x7fbe8b4ce9c0; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; layer = <CALayer: 0x7fbe8b4ced10>>",
+                   "value" => nil,
+                    "rect" => {
+               "y" => 0,
+        "center_x" => 187.5,
+        "center_y" => 333.5,
+               "x" => 0,
+           "width" => 375,
+          "height" => 667
+    }
+}
+irb(main):089:0> touch(query("*")[10])
+true
+irb(main):090:0> touch(query("*")[11])
+true
+irb(main):091:0> touch(query("*")[12])
+true
+irb(main):092:0> touch(query("*")[9])
+true
+irb(main):093:0> touch(query("*")[8])
+true
+irb(main):094:0> touch(query("*")[7])
+true
+irb(main):095:0> touch(query("*")[6])
+true
+irb(main):096:0> touch(query("*")[5])
+true
+irb(main):097:0> touch(query("*")13])
+SyntaxError: (irb):97: syntax error, unexpected tINTEGER, expecting ')'
+touch(query("*")13])
+                  ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):098:0> touch(query("*")13])
+SyntaxError: (irb):98: syntax error, unexpected tINTEGER, expecting ')'
+touch(query("*")13])
+                  ^
+	from /usr/bin/irb:12:in `<main>'
+irb(main):099:0> touch(query("*")[13])
+true
+irb(main):100:0> touch(query("*")[13])
+true
+irb(main):101:0> touch(query("*")[14])
+true
+irb(main):102:0> touch(query("*")[15])
+true
+irb(main):103:0> touch(query("*")[16])
+true
+irb(main):104:0> touch(query("*")[17])
+true
+irb(main):105:0> touch(query("*")[18])
+true
+irb(main):106:0> touch(query("*")[19])
+true
+irb(main):107:0> touch(query("*")[20])
+true
+irb(main):108:0> query("*",:id)
+[
+    [ 0] "*****",
+    [ 1] "*****",
+    [ 2] "*****",
+    [ 3] "*****",
+    [ 4] "*****",
+    [ 5] "*****",
+    [ 6] "*****",
+    [ 7] "*****",
+    [ 8] "*****",
+    [ 9] "*****",
+    [10] "*****",
+    [11] "*****",
+    [12] "*****",
+    [13] "*****",
+    [14] "*****",
+    [15] "*****",
+    [16] "*****",
+    [17] "*****",
+    [18] "*****",
+    [19] "*****",
+    [20] "*****",
+    [21] "*****",
+    [22] "*****",
+    [23] "*****",
+    [24] "*****",
+    [25] "*****",
+    [26] "*****",
+    [27] "*****",
+    [28] "*****",
+    [29] "*****",
+    [30] "*****",
+    [31] "*****",
+    [32] "*****",
+    [33] "*****",
+    [34] "*****",
+    [35] "*****",
+    [36] "*****",
+    [37] "*****",
+    [38] "*****",
+    [39] "*****",
+    [40] "*****",
+    [41] "*****",
+    [42] "*****",
+    [43] "*****"
+]
+irb(main):109:0> query("*",:text)
+[
+    [ 0] "*****",
+    [ 1] "*****",
+    [ 2] "*****",
+    [ 3] "*****",
+    [ 4] "*****",
+    [ 5] "*****",
+    [ 6] "*****",
+    [ 7] "*****",
+    [ 8] "*****",
+    [ 9] "*****",
+    [10] "*****",
+    [11] "*****",
+    [12] "*****",
+    [13] "*****",
+    [14] "*****",
+    [15] "RAJ, WELCOME TO CARLUCCIOS",
+    [16] "*****",
+    [17] "*****",
+    [18] "*****",
+    [19] "NO OTHER VELOCITY USERS HERE",
+    [20] "*****",
+    [21] "*****",
+    [22] "*****",
+    [23] "*****",
+    [24] "START A NEW BILL",
+    [25] "*****",
+    [26] "*****",
+    [27] "*****",
+    [28] "*****",
+    [29] "*****",
+    [30] "*****",
+    [31] "*****",
+    [32] "*****",
+    [33] "VENUES",
+    [34] "*****",
+    [35] "*****",
+    [36] "CHECK IN",
+    [37] "*****",
+    [38] "*****",
+    [39] "*****",
+    [40] "*****",
+    [41] "*****",
+    [42] "*****",
+    [43] "0"
+]
+irb(main):110:0> touch(query("*")[33])
+true
+irb(main):111:0> query("* ImageView")
+[]
+irb(main):112:0> query("ImageView")
+[]
+irb(main):113:0> query("UIImageView")
+[
+    [ 0] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 0,
+            "height" => 0
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8b4b8d40; frame = (0 0; 0 0); userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8b4d11b0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 116,
+            "center_x" => 0,
+            "center_y" => 116,
+                   "x" => 0,
+               "width" => 0,
+              "height" => 0
+        }
+    },
+    [ 1] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 363,
+            "height" => 326.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e04ab70; frame = (0 0; 363 326.5); clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e0a58c0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 120,
+            "center_x" => 187.5,
+            "center_y" => 283.25,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 326.5
+        }
+    },
+    [ 2] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "pinsmall",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 70,
+                 "x" => 10,
+             "width" => 15,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8de4c130; frame = (10 70; 15 20); autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e0c0f60>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 418.5,
+            "center_x" => 23.5,
+            "center_y" => 428.5,
+                   "x" => 16,
+               "width" => 15,
+              "height" => 20
+        }
+    },
+    [ 3] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 363,
+            "height" => 153
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8dacde40; frame = (0 0; 363 153); clipsToBounds = YES; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e10b130>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 453.5,
+            "center_x" => 187.5,
+            "center_y" => 530,
+                   "x" => 6,
+               "width" => 363,
+              "height" => 153
+        }
+    },
+    [ 4] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "pinsmall",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 70,
+                 "x" => 10,
+             "width" => 15,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8dfec7c0; frame = (10 70; 15 20); autoresize = RM+BM; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8b645a90>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 578.5,
+            "center_x" => 23.5,
+            "center_y" => 588.5,
+                   "x" => 16,
+               "width" => 15,
+              "height" => 20
+        }
+    },
+    [ 5] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => -20,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 64
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UINavigationBarBackground",
+                       "label" => nil,
+                 "description" => "<_UINavigationBarBackground: 0x7fbe8e05b410; frame = (0 -20; 375 64); autoresize = W; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e098260>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 0,
+            "center_x" => 187.5,
+            "center_y" => 32,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 64
+        }
+    },
+    [ 6] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 64,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 0.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8de51790; frame = (0 64; 375 0.5); userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e05b390>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 64,
+            "center_x" => 187.5,
+            "center_y" => 64.25,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 0.5
+        }
+    },
+    [ 7] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "btnMenu",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 8,
+                 "x" => 8,
+             "width" => 20,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e1549b0; frame = (8 8; 20 20); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e154ab0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 32,
+            "center_x" => 29,
+            "center_y" => 42,
+                   "x" => 19,
+               "width" => 20,
+              "height" => 20
+        }
+    },
+    [ 8] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "btnHelp",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 8,
+                 "x" => 8,
+             "width" => 20,
+            "height" => 20
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e155020; frame = (8 8; 20 20); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e155120>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 32,
+            "center_x" => 73,
+            "center_y" => 42,
+                   "x" => 63,
+               "width" => 20,
+              "height" => 20
+        }
+    },
+    [ 9] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 20,
+            "height" => 19
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8f5ec240; frame = (0 0; 20 19); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e797d60>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 31,
+            "center_x" => 331.5,
+            "center_y" => 40.5,
+                   "x" => 321.5,
+               "width" => 20,
+              "height" => 19
+        }
+    },
+    [10] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => -0.5,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 0.5
+        },
+        "accessibilityElement" => false,
+                       "class" => "UIImageView",
+                       "label" => nil,
+                 "description" => "<UIImageView: 0x7fbe8e041830; frame = (0 -0.5; 375 0.5); autoresize = W; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e040fb0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 617.5,
+            "center_x" => 187.5,
+            "center_y" => 617.75,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 0.5
+        }
+    },
+    [11] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => nil,
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 49
+        },
+        "accessibilityElement" => false,
+                       "class" => "_UITabBarBackgroundView",
+                       "label" => nil,
+                 "description" => "<_UITabBarBackgroundView: 0x7fbe8e096d30; frame = (0 0; 375 49); autoresize = W; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e097070>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 618,
+            "center_x" => 187.5,
+            "center_y" => 642.5,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 49
+        }
+    },
+    [12] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "tabCheckIn",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 6,
+                 "x" => 48.5,
+             "width" => 24,
+            "height" => 24
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBarSwappableImageView",
+                       "label" => nil,
+                 "description" => "<UITabBarSwappableImageView: 0x7fbe8e117410; frame = (48.5 6; 24 24); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e116c00>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 625,
+            "center_x" => 62.5,
+            "center_y" => 637,
+                   "x" => 50.5,
+               "width" => 24,
+              "height" => 24
+        }
+    },
+    [13] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "tabDiscover",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 6,
+                 "x" => 48.5,
+             "width" => 24,
+            "height" => 24
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBarSwappableImageView",
+                       "label" => nil,
+                 "description" => "<UITabBarSwappableImageView: 0x7fbe8e11bdb0; frame = (48.5 6; 24 24); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e11bca0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 625,
+            "center_x" => 187.5,
+            "center_y" => 637,
+                   "x" => 175.5,
+               "width" => 24,
+              "height" => 24
+        }
+    },
+    [14] {
+                       "alpha" => 1,
+                     "enabled" => false,
+                          "id" => "rewards",
+                     "visible" => 1,
+                       "frame" => {
+                 "y" => 6,
+                 "x" => 48,
+             "width" => 24,
+            "height" => 24
+        },
+        "accessibilityElement" => false,
+                       "class" => "UITabBarSwappableImageView",
+                       "label" => nil,
+                 "description" => "<UITabBarSwappableImageView: 0x7fbe8e120df0; frame = (48 6; 24 24); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x7fbe8e120ce0>> - (null)",
+                       "value" => nil,
+                        "rect" => {
+                   "y" => 625,
+            "center_x" => 312,
+            "center_y" => 637,
+                   "x" => 300,
+               "width" => 24,
+              "height" => 24
+        }
+    }
+]
+irb(main):114:0> 
+irb(main):115:0* 
+irb(main):116:0* tap_mark 'btnMenu'
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8b4d37a0; frame = (11 4; 36 36); opaque = NO; layer = <CALayer: 0x7fbe8b4d1f40>>",
+                       "label" => "btnMenu",
+                       "frame" => {
+                 "y" => 4,
+                 "x" => 11,
+             "width" => 36,
+            "height" => 36
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 24,
+            "center_x" => 29,
+            "center_y" => 42,
+                   "x" => 11,
+               "width" => 36,
+              "height" => 36
+        }
+    }
+]
+irb(main):117:0> tap_mark 'VIEW ACCOUNT'
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8e0c1380; frame = (94 150; 147 21); text = 'VIEW ACCOUNT'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8e0c14e0>>",
+                       "label" => "VIEW ACCOUNT",
+                       "frame" => {
+                 "y" => 150,
+                 "x" => 94,
+             "width" => 147,
+            "height" => 21
+        },
+        "accessibilityElement" => true,
+                       "value" => "VIEW ACCOUNT",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "VIEW ACCOUNT",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 130,
+            "center_x" => 167.5,
+            "center_y" => 140.5,
+                   "x" => 94,
+               "width" => 147,
+              "height" => 21
+        }
+    }
+]
+irb(main):118:0> tap_mark 'EDIT ACCOUNT DETAILS'
+
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UILabel: 0x7fbe8f0e0d90; frame = (87 124; 202 21); text = 'EDIT ACCOUNT DETAILS'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x7fbe8f0e0ef0>>",
+                       "label" => "EDIT ACCOUNT DETAILS",
+                       "frame" => {
+                 "y" => 124,
+                 "x" => 87,
+             "width" => 202,
+            "height" => 21
+        },
+        "accessibilityElement" => true,
+                       "value" => "EDIT ACCOUNT DETAILS",
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                        "text" => "EDIT ACCOUNT DETAILS",
+                       "class" => "UILabel",
+                        "rect" => {
+                   "y" => 188,
+            "center_x" => 188,
+            "center_y" => 198.5,
+                   "x" => 87,
+               "width" => 202,
+              "height" => 21
+        }
+    }
+]
+irb(main):119:0> 
+irb(main):120:0* tap_mark 'LOGOUT'
+Screenshot at screenshot_2.png
+RuntimeError: touch could not find view: 'view marked:'LOGOUT'', args: {:query=>"view marked:'LOGOUT'"}
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/failure_helpers.rb:70:in `screenshot_and_raise'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/map.rb:119:in `assert_map_results'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:1130:in `query_action_with_options'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:177:in `touch'
+	from /Library/Ruby/Gems/2.0.0/gems/calabash-cucumber-0.12.0/lib/calabash-cucumber/core.rb:937:in `tap_mark'
+	from (irb):120
+	from /usr/bin/irb:12:in `<main>'
+irb(main):121:0> query("Button")
+[]
+irb(main):122:0> query("UIButton")
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe9092e7f0; frame = (0 0; 375 150); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8f020580>>",
+                       "label" => nil,
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 375,
+            "height" => 150
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 64,
+            "center_x" => 187.5,
+            "center_y" => 139,
+                   "x" => 0,
+               "width" => 375,
+              "height" => 150
+        }
+    },
+    [1] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8b5b4c00; frame = (0 0; 86 34); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8f071460>>",
+                       "label" => "btnLogout",
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 86,
+            "height" => 34
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 522,
+            "center_x" => 140.5,
+            "center_y" => 539,
+                   "x" => 97.5,
+               "width" => 86,
+              "height" => 34
+        }
+    },
+    [2] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8f0e0610; frame = (94 0; 86 34); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8e0d2f20>>",
+                       "label" => "btnSave",
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 94,
+             "width" => 86,
+            "height" => 34
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 522,
+            "center_x" => 234.5,
+            "center_y" => 539,
+                   "x" => 191.5,
+               "width" => 86,
+              "height" => 34
+        }
+    }
+]
+irb(main):123:0> 
+irb(main):124:0* 
+irb(main):125:0* tap_mark "btnLogout"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8b5b4c00; frame = (0 0; 86 34); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8f071460>>",
+                       "label" => "btnLogout",
+                       "frame" => {
+                 "y" => 0,
+                 "x" => 0,
+             "width" => 86,
+            "height" => 34
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 522,
+            "center_x" => 140.5,
+            "center_y" => 539,
+                   "x" => 97.5,
+               "width" => 86,
+              "height" => 34
+        }
+    }
+]
+irb(main):126:0> element_exists("* { text CONTAINS 'WELCOME'}")
+false
+irb(main):127:0> element_exists("* {text CONTAINS 'WELCOME'}")
+true
+irb(main):128:0> element_exists("* {text CONTAINS 'WELCOME'}")
+true
+irb(main):129:0> element_exists("* {text CONTAINS 'WELCOMasE'}")
+false
+irb(main):130:0> element_exists("* {text CONTAINS 'WELCOME'}")
+true
+irb(main):131:0> tap_mark "SKIP"
+[
+    [0] {
+                          "id" => nil,
+                 "description" => "<UIButton: 0x7fbe8df83140; frame = (8 629; 359 30); opaque = NO; autoresize = RM+BM; layer = <CALayer: 0x7fbe8f5e3da0>>",
+                       "label" => "SKIP",
+                       "frame" => {
+                 "y" => 629,
+                 "x" => 8,
+             "width" => 359,
+            "height" => 30
+        },
+        "accessibilityElement" => true,
+                       "value" => nil,
+                       "alpha" => 1,
+                     "enabled" => true,
+                     "visible" => 1,
+                    "selected" => false,
+                       "class" => "UIButton",
+                        "rect" => {
+                   "y" => 629,
+            "center_x" => 187.5,
+            "center_y" => 644,
+                   "x" => 8,
+               "width" => 359,
+              "height" => 30
+        }
+    }
+]
+irb(main):132:0> exit
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ cucumber --tags @Velocity-1101
+Feature: My Account
+    As a first time Velocity app user
+    I want to create my account with velocity
+    So that I can able to navigate the app
+
+  @IOS @Velocity-1101
+  Scenario: Test successful login        # features/myaccount.feature:54
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+    Given I am on Velocity app           # features/step_definitions/calabash_steps.rb:47
+    Then Clear app data                  # features/step_definitions/calabash_steps.rb:60
+      touch could not find view: 'view marked:'btnMenu'', args: {:query=>"view marked:'btnMenu'"} (RuntimeError)
+      ./features/step_definitions/calabash_steps.rb:71:in `/^Clear app data$/'
+      features/myaccount.feature:56:in `Then Clear app data'
+    When I tap on LoginButton            # features/step_definitions/calabash_steps.rb:8
+    Then Change settings for DEVELOPMENT # features/step_definitions/calabash_steps.rb:219
+    And I tap on LoginButton             # features/step_definitions/calabash_steps.rb:8
+    And I enter Email                    # features/step_definitions/calabash_steps.rb:136
+    And I enter PASSWORD                 # features/step_definitions/calabash_steps.rb:136
+    And I tap on NEXT                    # features/step_definitions/calabash_steps.rb:8
+    Then Verify Login successful         # features/step_definitions/calabash_steps.rb:82
+
+Failing Scenarios:
+cucumber features/myaccount.feature:54 # Scenario: Test successful login
+
+1 scenario (1 failed)
+9 steps (1 failed, 7 skipped, 1 passed)
+0m48.019s
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ cucumber --tags @Velocity-1101
+Feature: My Account
+    As a first time Velocity app user
+    I want to create my account with velocity
+    So that I can able to navigate the app
+
+  @IOS @Velocity-1101
+  Scenario: Test successful login        # features/myaccount.feature:54
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+    Given I am on Velocity app           # features/step_definitions/calabash_steps.rb:47
+    Then Clear app data                  # features/step_definitions/calabash_steps.rb:60
+      undefined method `element_does_not_exists' for #<Object:0x007fc54b274260> (NoMethodError)
+      ./features/step_definitions/calabash_steps.rb:71:in `/^Clear app data$/'
+      features/myaccount.feature:56:in `Then Clear app data'
+    When I tap on LoginButton            # features/step_definitions/calabash_steps.rb:8
+    Then Change settings for DEVELOPMENT # features/step_definitions/calabash_steps.rb:221
+    And I tap on LoginButton             # features/step_definitions/calabash_steps.rb:8
+    And I enter Email                    # features/step_definitions/calabash_steps.rb:138
+    And I enter PASSWORD                 # features/step_definitions/calabash_steps.rb:138
+    And I tap on NEXT                    # features/step_definitions/calabash_steps.rb:8
+    Then Verify Login successful         # features/step_definitions/calabash_steps.rb:84
+
+Failing Scenarios:
+cucumber features/myaccount.feature:54 # Scenario: Test successful login
+
+1 scenario (1 failed)
+9 steps (1 failed, 7 skipped, 1 passed)
+0m24.822s
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ cucumber --tags @Velocity-1101
+Feature: My Account
+    As a first time Velocity app user
+    I want to create my account with velocity
+    So that I can able to navigate the app
+
+  @IOS @Velocity-1101
+  Scenario: Test successful login        # features/myaccount.feature:54
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+    Given I am on Velocity app           # features/step_definitions/calabash_steps.rb:47
+    Then Clear app data                  # features/step_definitions/calabash_steps.rb:60
+    When I tap on LoginButton            # features/step_definitions/calabash_steps.rb:8
+    Then Change settings for DEVELOPMENT # features/step_definitions/calabash_steps.rb:221
+    And I tap on LoginButton             # features/step_definitions/calabash_steps.rb:8
+    And I enter Email                    # features/step_definitions/calabash_steps.rb:138
+    And I enter PASSWORD                 # features/step_definitions/calabash_steps.rb:138
+    And I tap on NEXT                    # features/step_definitions/calabash_steps.rb:8
+    Then Verify Login successful         # features/step_definitions/calabash_steps.rb:84
+      Text Not Found (RuntimeError)
+      ./features/step_definitions/calabash_steps.rb:129:in `rescue in block in <top (required)>'
+      ./features/step_definitions/calabash_steps.rb:123:in `/^Verify ([\w ]+)$/'
+      features/myaccount.feature:63:in `Then Verify Login successful'
+
+Failing Scenarios:
+cucumber features/myaccount.feature:54 # Scenario: Test successful login
+
+1 scenario (1 failed)
+9 steps (1 failed, 8 passed)
+2m12.610s
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ cucumber --tags @Velocity-1101
+Feature: My Account
+    As a first time Velocity app user
+    I want to create my account with velocity
+    So that I can able to navigate the app
+
+  @IOS @Velocity-1101
+  Scenario: Test successful login        # features/myaccount.feature:54
+/Library/Ruby/Gems/2.0.0/gems/sim_launcher-0.4.13/lib/sim_launcher/simulator.rb:104: warning: Insecure world writable dir /usr in PATH, mode 040777
+    Given I am on Velocity app           # features/step_definitions/calabash_steps.rb:47
+    Then Clear app data                  # features/step_definitions/calabash_steps.rb:60
+    When I tap on LoginButton            # features/step_definitions/calabash_steps.rb:8
+    Then Change settings for DEVELOPMENT # features/step_definitions/calabash_steps.rb:221
+    And I tap on LoginButton             # features/step_definitions/calabash_steps.rb:8
+    And I enter Email                    # features/step_definitions/calabash_steps.rb:138
+    And I enter PASSWORD                 # features/step_definitions/calabash_steps.rb:138
+    And I tap on NEXT                    # features/step_definitions/calabash_steps.rb:8
+    Then Verify Login successful         # features/step_definitions/calabash_steps.rb:84
+      Element Found
+
+1 scenario (1 passed)
+9 steps (9 passed)
+2m1.847s
+Prateeks-MacBook-Pro:Jags-Baz Prateek$ 
