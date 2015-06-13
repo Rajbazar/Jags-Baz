@@ -129,6 +129,13 @@ session="S1"
             screenshot_and_raise('Text Not Found')
           end
         elsif verifyText == "Incorrect details popup"
+           begin
+                 wait_for_element_exists("* text:'Incorrect login details, please try again'")
+                 tap_mark "OK"
+                 puts "Element Found"
+            rescue
+                 screenshot_and_raise('Text Not Found')
+            end 
         else
         end
     end
@@ -195,6 +202,9 @@ session="S1"
       sleep 2
       end
       if ops == "IncorrectPassword"
+      touch(query("* UITextField")[1]) 
+      wait_for_keyboard 
+      keyboard_enter_text("musop123456")
       end
       if ops == "FirstName"
       touch(query("* UITextField")[0])
@@ -207,7 +217,7 @@ session="S1"
       wait_for_keyboard
       keyboard_enter_text("#{$Configuration["LastName"]}")
       sleep 2
-     end
+      end
       if ops == "MobileNumber"
       touch(query("* UITextField")[1])
       wait_for_keyboard
