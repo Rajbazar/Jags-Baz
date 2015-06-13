@@ -12,6 +12,12 @@ Feature: About
      And I tap on About
      And Display text in AppVersion
   
+  @Android @Velocity-201
+  Scenario: Selenium Test
+  Given Chrome is launched
+  And Open Url
+  And Enter PIN
+  And Close Chrome
 
 
         

@@ -296,3 +296,23 @@ Then(/^Display text in ([\w ]+)$/) do |ops|
     ios_connect(session)
   end  
 end
+
+Then(/^Chrome is launched/) do
+$driver = Selenium::WebDriver.for :chrome, :switches => %w[--ignore-certificate-errors --disable-popup-blocking --disable-translate]
+end
+
+Then(/^Open Url$/) do
+  $driver.navigate.to "#{$Configuration["URL"]}"
+end
+
+Then(/^Enter PIN$/) do
+$driver.find_element(:id, "password").clear
+$driver.find_element(:id, "password").send_keys "#{$Configuration["WebPIN"]}"
+sleep 10
+##$driver.find_element(:css, "button.number.btn-default").click
+end
+
+Then(/^Close Chrome$/) do
+  $driver.quit
+  puts "Closed"
+end
