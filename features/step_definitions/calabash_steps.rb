@@ -307,9 +307,11 @@ end
 
 Then(/^Enter PIN$/) do
 $driver.find_element(:id, "password").clear
-$driver.find_element(:id, "password").send_keys "#{$Configuration["WebPIN"]}"
-sleep 10
-##$driver.find_element(:css, "button.number.btn-default").click
+$driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][0]+"]").click
+$driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][1]+"]").click
+$driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][2]+"]").click
+$driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][3]+"]").click
+sleep 5
 end
 
 Then(/^Close Chrome$/) do
