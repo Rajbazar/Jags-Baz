@@ -303,6 +303,7 @@ end
 
 Then(/^Open Url$/) do
   $driver.navigate.to "#{$Configuration["URL"]}"
+  $driver.manage.window.maximize
 end
 
 Then(/^Enter PIN$/) do
