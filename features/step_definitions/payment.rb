@@ -36,6 +36,7 @@ Then(/^select table number ([\d]+)$/) do |number|
   $driver.find_element(:xpath, "//div["+number.to_s+"]").click
   sleep 2
   $driver.find_element(:css, "a.accordion-toggle > span.ng-binding").click
+  sleep 2
 end
 
 ##Then I add breakfast item
@@ -78,6 +79,7 @@ Then(/^I should be able to see my bill on app$/) do
   $driver.find_element(:css, "button.btn.velocity").click
   $wait.until { $driver.find_element(:css => "h5.col-tab-20.ng-binding").displayed? }
   $driver.find_element(:css, "h5.col-tab-20.ng-binding").click
+  sleep 7
   session="S1"
     if $Configuration[session+"DeviceType"] == "Android"
         set_default_device($session[session])
@@ -123,4 +125,56 @@ Then(/^Complete Payment Process$/) do
 end
 end
 
+##And I enter my card details  
+Then(/^I enter my card-details$/) do 
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 2
+        wait_for_element_exists("* id:'etCardNo'")
+        enter_text("* id:'etCardNo'", "#{$Configuration["CardNo"]}")
+        sleep 2
+        enter_text("* id:'etExpiryDate'", "#{$Configuration["CardExpiry"]}")
+        sleep 2
+        enter_text("* id:'etCV2'", "#{$Configuration["CardCV"]}")
+        sleep 2
+        enter_text("* id:'etPostCode'", "#{$Configuration["CardPINCode"]}")
+        sleep 2
+        tap_mark "SAVE"
+        sleep 10
+    else
+    ios_connect(session)
+    sleep 2
+end
+end
+
+Then(/^Delete my card-details$/) do 
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 2
+        start_test_server_in_background
+        system("#{default_device.adb_command} shell input keyevent KEYCODE_ENTER")
+        sleep 2
+        tap_mark 'Wallet'
+        sleep 5
+        if element_exists("* text:'This is your default payment method'")
+          perform_action('swipe', 'left')
+        else
+          perform_action('swipe', 'right')
+        end
+        sleep 5
+        tap_mark 'butPaymentMethDefault'
+        sleep 5
+        perform_action('swipe', 'right')
+        sleep 5
+        tap_mark 'butPaymentMethDelete'
+        sleep 2
+        tap_mark 'Yes'
+        wait_for_element_exists("* {text CONTAINS 'Deleted'}")
+    else
+    ios_connect(session)
+    sleep 2
+end
+end
 

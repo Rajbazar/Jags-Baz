@@ -18,6 +18,8 @@ session="S1"
             tap_mark "butLogin"
         elsif ops == "MainMenu"
             system("#{default_device.adb_command} shell input keyevent KEYCODE_ENTER")
+        elsif ops == "AddCardButton"
+          tap_mark 'butPaymentMethAdd'
         else
            tap_mark "#{ops.to_s}"
         end
@@ -104,6 +106,12 @@ session="S1"
             begin
                  wait_for_element_exists("* text:'Incorrect username and password'")
                  tap_mark "Close"
+            rescue
+                 screenshot_and_raise('Text Not Found')
+            end
+        elsif verifyText == "Payment Methods"
+          begin
+                 wait_for_element_exists("* text:'Payment Methods'")
             rescue
                  screenshot_and_raise('Text Not Found')
             end
