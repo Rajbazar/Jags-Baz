@@ -1,5 +1,24 @@
 
-
+def android_textgrep()
+    arr=query("*", :text)
+    act_arr=Array.new
+    i=0
+    while i<arr.length
+      if arr[i]['error'] == nil
+          act_arr.push(arr[i].to_s)
+        else
+      end
+    i+=1
+    end
+    return act_arr
+end
+def p_arry(a)
+    i=0
+    while i<a.length
+        puts a[i].to_s + "\n"
+        i+=1
+    end
+end
 Then(/^I select venue as ([\w ]+)$/) do |ops|
 session="S1"
     if $Configuration[session+"DeviceType"] == "Android"
@@ -177,4 +196,41 @@ Then(/^Delete my card-details$/) do
     sleep 2
 end
 end
-
+##Then I should able to see the list of RECENT VISITS
+Then(/^I should able to see the list of RECENT VISITS$/) do 
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 2
+        wait_for_element_exists("* id:'tvVenueName'")
+        var_hotel = query("* id:'tvVenueName'", :text)
+        var_time = query("* id:'tvVenueTime'", :text)
+        var_pay = query("* id:'tvVenuePrice'", :text)
+        scroll_down
+        sleep 2
+        var_hotel = var_hotel + query("* id:'tvVenueName'", :text)
+        var_time = var_time + query("* id:'tvVenueTime'", :text)
+        var_pay = var_pay + query("* id:'tvVenuePrice'", :text)
+        scroll_down
+        sleep 2
+        var_hotel = var_hotel + query("* id:'tvVenueName'", :text)
+        var_time = var_time + query("* id:'tvVenueTime'", :text)
+        var_pay = var_pay + query("* id:'tvVenuePrice'", :text)
+        var_hotel = var_hotel.uniq
+        var_time = var_time.uniq
+        var_pay = var_pay.uniq
+        puts "\nRecent Visits with unique Venue Name, Date and Payment"
+        puts "\n"
+        p_arry(var_hotel)
+        p_arry(var_time)
+        p_arry(var_pay)
+        puts "\n"
+        scroll_up
+        sleep 2
+        scroll_up
+        sleep 2
+    else
+    ios_connect(session)
+    sleep 2
+end
+end

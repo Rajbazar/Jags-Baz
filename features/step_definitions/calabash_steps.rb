@@ -20,6 +20,8 @@ session="S1"
             system("#{default_device.adb_command} shell input keyevent KEYCODE_ENTER")
         elsif ops == "AddCardButton"
           tap_mark 'butPaymentMethAdd'
+        elsif ops == "FirstReceipt"
+          touch(query("* id:'tvVenueName'")[0])
         else
            tap_mark "#{ops.to_s}"
         end
