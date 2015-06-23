@@ -47,6 +47,11 @@ session="S1"
     else
       ios_connect(session)
       sleep 2
+      while element_does_not_exist("* text:'"+ops.to_s+"'")
+        scroll("view", :down)
+        sleep 2
+      end
+      touch("* text:'"+ops.to_s+"'")
     end
 end
 
@@ -115,7 +120,24 @@ Then(/^I should be able to see my bill on app$/) do
         end  
     else
       ios_connect(session)
-      sleep 2
+      sleep 12
+      var = query("*", :text)
+      i=0
+      while (i<var.length)
+        if (query("*", :text)[i] == "REDEEM CREDIT")
+          app_bill=query("*", :text)[i+4]
+          break
+         else
+          i+=1
+        end 
+      end
+      puts "App --> " + app_bill.to_s
+        app_bill=app_bill.gsub(/£/,'').to_f
+        if app_bill == bill_float
+          puts "Bills matched on both app and web!!"
+        else
+          fail('Bills not matched')
+        end    
   end
 end
 
@@ -140,7 +162,18 @@ Then(/^Complete Payment Process$/) do
         tap_mark 'butCloseThankYou'
     else
       ios_connect(session)
+      sleep 5
+      tap_mark 'down'
+      sleep 5
+      tap_mark 'btnPay'
+      sleep 5
+      tap_mark 'Pay'
+      sleep 7
+      tap_mark '4 stars'
       sleep 2
+      tap_mark 'btnDone'
+      sleep 5
+      tap_mark 'btnCloseMap'
 end
 end
 
@@ -163,7 +196,7 @@ Then(/^I enter my card-details$/) do
         sleep 10
     else
     ios_connect(session)
-    sleep 2
+    sleep 5
 end
 end
 

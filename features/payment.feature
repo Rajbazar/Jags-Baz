@@ -3,7 +3,7 @@ Feature: Payment
   I would like to check my recipt on the app
   So that I can able to pay  
 
-  @Android @Velocity-300
+  @Android @IOS @Velocity-300
   Scenario: Verify total bill on app and web
     Given I am on Velocity app
     Given user is Logged in Velocity app

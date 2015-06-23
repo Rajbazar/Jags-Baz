@@ -3,7 +3,7 @@ Feature: About
   I would like to verify Terms and condition and other links
   So that I can able to use the app 
 
-  @Android @Velocity-200
+  @Android @IOS @Velocity-200
   Scenario: Verify App Version
     Given I am on Velocity app
     Given user is Logged in Velocity app
@@ -12,7 +12,7 @@ Feature: About
      And I tap on About
      And Display text in AppVersion
   
-  @Android @Velocity-201
+  @Android @IOS @Velocity-201
   Scenario: Selenium Test
   Given Chrome is launched
   And Open Url

@@ -34,6 +34,11 @@ session="S1"
         elsif ops == "LoginButton"
           tap_mark "LOG IN"
         elsif ops == "MainMenu"
+          tap_mark 'btnMenu'
+        elsif ops == "About"
+          touch("* {text CONTAINS 'ABOUT'}")
+        elsif ops == "Start a new bill"
+          tap_mark "START A NEW BILL"
         else
            tap_mark "#{ops.to_s}"
            sleep 2
@@ -289,6 +294,12 @@ Then(/^user is Logged in Velocity app$/) do
       end
     else
       ios_connect(session)
+      sleep 5
+      if element_exists("* text:'VENUES'")
+        puts "Element Found"
+      else
+        fail('User not logged in.')
+      end
     end  
 end
 
@@ -304,6 +315,11 @@ Then(/^Display text in ([\w ]+)$/) do |ops|
       end       
   else
     ios_connect(session)
+    sleep 3
+    if ops == "AppVersion"
+        puts "App Version: " + query("UILabel", :text)[5].to_s
+      else
+      end 
   end  
 end
 
