@@ -196,7 +196,24 @@ Then(/^I enter my card-details$/) do
         sleep 10
     else
     ios_connect(session)
-    sleep 5
+    sleep 2
+    wait_for_element_exists("UITextField")
+    clear_text("UITextField")
+    touch(query("textField")[0])
+    if keyboard_visible?
+      keyboard_enter_text "#{$Configuration["CardNo"]}"
+    end  
+    sleep 2
+    var = "#{$Configuration["CardExpiry"]}"
+    var = var.gsub(/\//,'').to_s
+    if keyboard_visible?
+      keyboard_enter_text var
+      keyboard_enter_text "#{$Configuration["CardCV"]}"
+      keyboard_enter_text "#{$Configuration["CardPINCode"]}"
+    end 
+    sleep 2
+    tap_mark 'SAVE'
+    sleep 10
 end
 end
 
@@ -227,6 +244,16 @@ Then(/^Delete my card-details$/) do
     else
     ios_connect(session)
     sleep 2
+    tap_mark 'btnDefaultCard'
+    sleep 2
+    tap_mark 'Yes'
+    sleep 5
+    swipe :left, force: :strong
+    sleep 3
+    tap_mark 'btnDeleteCard'
+    sleep 2
+    tap_mark 'Yes'
+    sleep 5
 end
 end
 ##Then I should able to see the list of RECENT VISITS
@@ -264,6 +291,31 @@ Then(/^I should able to see the list of RECENT VISITS$/) do
         sleep 2
     else
     ios_connect(session)
+    sleep 10
+    var = query("UILabel", :text)
+    scroll("UITableView", :down)
+    sleep 3
+    var = query("UILabel", :text)
+    scroll("UITableView", :down)
+    sleep 3
+    var = query("UILabel", :text)
+    scroll("UITableView", :down)
+    sleep 3
+    var = query("UILabel", :text)
+    scroll("UITableView", :down)
+    sleep 3
+    var = var.uniq
+    var.delete("Tap to view your receipts")
+    var.delete("MY ACCOUNT")
+    var.delete("RECENT VISITS")
+    scroll("UITableView", :up)
     sleep 2
+    scroll("UITableView", :up)
+    sleep 2
+    scroll("UITableView", :up)
+    sleep 2
+    scroll("UITableView", :up)
+    sleep 2
+    p_arry(var)
 end
 end

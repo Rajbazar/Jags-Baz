@@ -3,26 +3,7 @@ Feature: My Account
     I want to create my account with velocity
     So that I can able to navigate the app
 
-  @Android @Velocity-100
-  Scenario: To create an account as a new user
-    Given I am on Velocity app
-     When I tap on SIGN UP
-      And Verify signup screen
-      And I enter Email
-      And I tap on next
-      And I enter Password
-      And I tap on next
-      And I enter Password
-      And I tap on next
-      And I enter FirstName
-      And I enter LastName
-      And I tap on next
-      And I tap on next
-     Then I enter MobileNumber
-      And I tap on next
-      And I tap on next
-
-@IOS @Velocity-1100
+@Android @IOS @Velocity-100
   Scenario: To create an account as a new user
     Given I am on Velocity app
      When I tap on SIGN UP
@@ -34,7 +15,7 @@ Feature: My Account
       And I enter FirstName
       And I enter LastName
       And I tap on NEXT
-      And I wait for 10 seconds
+      And I wait for 15 seconds
       And I tap on SKIP
 
 @Android @Velocity-101
@@ -45,10 +26,10 @@ Feature: My Account
    Then Change settings for DEV Server
     And I tap on LoginButton
     And I enter Email
-    And I tap on next
-    And I enter Password
-    And I tap on next
-   Then Verify Login successful popup
+    And I enter PASSWORD
+    And I tap on NEXT
+   Then Verify Login successful 
+
 
 @IOS @Velocity-1101
   Scenario: Test successful login
@@ -70,9 +51,8 @@ Feature: My Account
       Then Change settings for DEV Server
       And I tap on LoginButton
       And I enter Email
-      And I tap on next
       And I enter IncorrectPassword
-      And I tap on next
+      And I tap on NEXT
      Then Verify Incorrect details popup
 
 

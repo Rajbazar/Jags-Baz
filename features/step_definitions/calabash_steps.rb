@@ -39,6 +39,16 @@ session="S1"
           touch("* {text CONTAINS 'ABOUT'}")
         elsif ops == "Start a new bill"
           tap_mark "START A NEW BILL"
+        elsif ops == "My Account"
+          touch("* {text CONTAINS 'MY ACCOUNT'}")
+        elsif ops == "Wallet"
+          tap_mark 'WALLET'
+        elsif ops == "AddCardButton"
+          tap_mark 'btnAddCard'
+        elsif ops == "Receipts"
+          tap_mark 'RECEIPTS'
+        elsif ops == "FirstReceipt"
+          touch(query("view")[0])
         else
            tap_mark "#{ops.to_s}"
            sleep 2
@@ -80,11 +90,11 @@ session="S1"
     if element_does_not_exist("* text:'SIGN UP'")
       tap_mark 'btnMenu'
       sleep 2
-      tap_mark 'VIEW ACCOUNT'
+      touch("* {text CONTAINS 'SETTINGS'}")
       sleep 2
-      tap_mark 'EDIT ACCOUNT DETAILS'
+      tap_mark 'LOGOUT'
       sleep 2
-      tap_mark 'btnLogout'
+      tap_mark 'Yes'
       sleep 2
     end
     end
@@ -97,7 +107,7 @@ session="S1"
         sleep 2
         if verifyText == "signup screen"
                  begin
-                 wait_for_element_exists("* text:'REGISTRATION'")
+                 wait_for_element_exists("* text:'CREATE NEW ACCOUNT'")
                  puts "Element Found"
                  rescue
                  screenshot_and_raise('Text Not Found')
@@ -111,7 +121,7 @@ session="S1"
         end
         elsif verifyText == "Incorrect details popup"
             begin
-                 wait_for_element_exists("* text:'Incorrect username and password'")
+                 wait_for_element_exists("* text:'Incorrect login details, please try again'")
                  tap_mark "Close"
             rescue
                  screenshot_and_raise('Text Not Found')
@@ -163,37 +173,43 @@ session="S1"
       set_default_device($session[session])
       sleep 3
       if ops == "Email"
-        query("* id:'etRegisterInfo'", {:setText => ""})
-        query("* id:'etRegisterInfo'", {:setText => "#{$Configuration["UserEmail"]}"})
+        tap_mark 'etEmail'
+        keyboard_enter_text "#{$Configuration["UserEmail"]}"
+        sleep 2
       end
-      if ops == "Password"
-        query("* id:'etRegisterInfo'", {:setText => ""})
-        query("* id:'etRegisterInfo'", {:setText => "#{$Configuration["UserPassword"]}"})
+      if ops == "Password" || ops == "PASSWORD"
+        tap_mark 'etPassword'
+        keyboard_enter_text "#{$Configuration["UserPassword"]}"
+        sleep 2
       end
       if ops == "IncorrectPassword"
-        query("* id:'etRegisterInfo'", {:setText => ""})
-        query("* id:'etRegisterInfo'", {:setText => "abcd123456"})
+        tap_mark 'etPassword'
+        keyboard_enter_text "abcd123456"
+        sleep 2
       end
       if ops == "FirstName"
         if element_exists("* {text CONTAINS 'already in use'}")
             fail('Email already in use')
         end
-        query("* id:'etRegisterNameInfo'", {:setText => ""})
-        query("* id:'etRegisterNameInfo'", {:setText => "#{$Configuration["FirstName"]}"})
+        tap_mark 'etFirstName'
+        keyboard_enter_text "#{$Configuration["FirstName"]}"
+        sleep 2
       end
       if ops == "LastName"
         if element_exists("* {text CONTAINS 'already in use'}")
             fail('Email already in use')
         end
-        query("* id:'etBasicInfo'", {:setText => ""})
-        query("* id:'etBasicInfo'", {:setText => "#{$Configuration["LastName"]}"})
+        tap_mark 'etSurname'
+        keyboard_enter_text "#{$Configuration["LastName"]}"
+        sleep 2
      end
       if ops == "MobileNumber"
         if element_exists("* {text CONTAINS 'already in use'}")
             fail('Email already in use')
         end
-        query("* id:'etRegisterNameInfo'", {:setText => ""})
-        query("* id:'etRegisterNameInfo'", {:setText => "#{$Configuration["MobileNumber"]}"})
+        tap_mark 'etMobile'
+        keyboard_enter_text "#{$Configuration["MobileNumber"]}"
+        sleep 2
       end
     else
     ios_connect(session)
@@ -248,8 +264,8 @@ Then(/^Change settings for ([\w ]+)$/) do |settings|
     if $Configuration[session+"DeviceType"] == "Android"
       set_default_device($session[session])
       sleep 3
-      query("* id:'etRegisterInfo'", {:setText => ""})
-      query("* id:'etRegisterInfo'", {:setText => "#12349"})
+      tap_mark 'etEmail'
+      keyboard_enter_text "#12349"
       perform_action('press_user_action_button', 'next')
       sleep 2
       tap_mark "#{settings}"
