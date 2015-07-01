@@ -39,7 +39,6 @@ def android_LaunchClient(session)
   else
     $session = {session => x1}
   end
-  
   start_test_server_in_background()
   $temp=$temp+1
   sleep 10

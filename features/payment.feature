@@ -73,5 +73,17 @@ Feature: Payment
     And I tap on FirstReceipt
 
 
-      
+@Android @Velocity-303
+  Scenario: Adding the Venues onto my favourite lists
+    Given I am on Velocity app
+    Given user is Logged in Velocity app
+     When I tap on Discover
+     Then I tap on StarButton
+      And I scroll to right
+      And I tap on StarButton
+      And I tap on MainMenu
+      And I wait for 3 seconds
+      And I tap on Favourites
+      And I wait for 5 seconds
+      And Verify Favourites listings         
   

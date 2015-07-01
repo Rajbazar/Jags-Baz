@@ -17,11 +17,17 @@ session="S1"
         elsif ops == "LoginButton"
             tap_mark "butLogin"
         elsif ops == "MainMenu"
-            system("#{default_device.adb_command} shell input keyevent KEYCODE_ENTER")
+          tap_mark 'Open'
         elsif ops == "AddCardButton"
           tap_mark 'butPaymentMethAdd'
         elsif ops == "FirstReceipt"
           touch(query("* id:'tvVenueName'")[0])
+        elsif ops == "StarButton"
+          if element_exists("* text:'SKIP'")
+            tap_mark 'SKIP'
+            sleep 2
+          end
+          tap_mark 'butFavAnimator'
         else
            tap_mark "#{ops.to_s}"
         end
@@ -131,6 +137,23 @@ session="S1"
                  wait_for_element_exists("* text:'Payment Methods'")
             rescue
                  screenshot_and_raise('Text Not Found')
+            end
+          elsif verifyText == "Favourites listings"
+             if query("* id:'ivVenueImage'").count == 2 
+              puts "Pass: Element Found"
+              touch(query("* id:'ivVenueImage'")[0])
+              sleep 2
+              tap_mark 'butFavAnimator'
+              sleep 2
+              system("#{default_device.adb_command} shell input keyevent KEYCODE_BACK")
+              sleep 2
+              touch(query("* id:'ivVenueImage'")[0])
+              sleep 2
+              tap_mark 'butFavAnimator'
+              sleep 2
+              system("#{default_device.adb_command} shell input keyevent KEYCODE_BACK")
+            else
+              fail('Element not found')
             end
         else
         end
@@ -360,4 +383,20 @@ end
 Then(/^Close Chrome$/) do
   $driver.quit
   puts "Closed"
+end
+
+Then(/^I scroll to ([\w ]+)$/) do |ops|
+  session="S1"
+  if $Configuration[session+"DeviceType"] == "Android"
+      set_default_device($session[session])
+      sleep 3 
+      if ops == "right"
+        perform_action('swipe', 'right')
+        elsif ops == "left" 
+        perform_action('swipe', 'left')
+      end
+  else
+    ios_connect(session)
+    sleep 3
+  end  
 end
