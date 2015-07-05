@@ -79,7 +79,7 @@ Feature: Payment
     Given user is Logged in Velocity app
      When I tap on Discover
      Then I tap on StarButton
-      And I scroll to right
+      And I scroll venue to right
       And I tap on StarButton
       And I tap on MainMenu
       And I wait for 3 seconds

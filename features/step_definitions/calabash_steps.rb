@@ -400,3 +400,15 @@ Then(/^I scroll to ([\w ]+)$/) do |ops|
     sleep 3
   end  
 end
+
+Then(/^I scroll venue to right$/) do
+  session="S1"
+  if $Configuration[session+"DeviceType"] == "Android"
+      set_default_device($session[session])
+      sleep 3 
+      perform_action('drag', 90, 0, 50, 50, 50)
+  else
+    ios_connect(session)
+    sleep 3
+  end  
+end
