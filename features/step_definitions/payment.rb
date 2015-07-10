@@ -124,8 +124,8 @@ Then(/^I should be able to see my bill on app$/) do
       var = query("*", :text)
       i=0
       while (i<var.length)
-        if (query("*", :text)[i] == "REDEEM CREDIT")
-          app_bill=query("*", :text)[i+4]
+        if (query("*", :text)[i] == "Paid:")
+          app_bill=query("*", :text)[i+7]
           break
          else
           i+=1
