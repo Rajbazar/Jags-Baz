@@ -55,6 +55,16 @@ session="S1"
           tap_mark 'RECEIPTS'
         elsif ops == "FirstReceipt"
           touch(query("view")[0])
+        elsif ops == "Discover"
+          tap_mark 'DISCOVER'
+        elsif ops == "StarButton"
+          if element_exists("* text:'SKIP'")
+            tap_mark 'SKIP'
+            sleep 2
+          end
+          tap_mark 'btnFav'
+        elsif ops == "Favourites"
+          touch("* {text CONTAINS 'FAVORITES'}")
         else
            tap_mark "#{ops.to_s}"
            sleep 2
@@ -63,7 +73,7 @@ session="S1"
               sleep 2
               tap_mark 'SKIP'
               sleep 2
-            end
+            end 
         end
 end
 end
@@ -184,6 +194,17 @@ session="S1"
             rescue
                  screenshot_and_raise('Text Not Found')
             end 
+        elsif verifyText == "Favourites listings"
+          if query("* id:'btnFavBig'").count == 1
+            fail('Element not found')
+            else
+            puts "Pass: Element Found"
+             touch("UIImageView")
+             sleep 3
+             if element_exists("* id:'btnFavOn'")
+              tap_mark 'btnFavOn'
+            end
+          end
         else
         end
     end
@@ -410,5 +431,6 @@ Then(/^I scroll venue to right$/) do
   else
     ios_connect(session)
     sleep 3
+    swipe :right, force: :strong
   end  
 end

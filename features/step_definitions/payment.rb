@@ -95,6 +95,22 @@ end
 
 ##And I should be able to see my bill
 Then(/^I should be able to see my bill on app$/) do 
+    session="S1"
+  if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 5
+        if element_exists("* text:'Yes'")
+          touch("* text:'Yes'")
+          sleep 2
+        end
+  else
+    ios_connect(session)
+    sleep 5
+     if element_exists("* text:'Yes'") || element_exists("* text:'YES'")
+          touch("* text:'Yes'")
+          sleep 2
+        end
+  end
   total_web_bill=$driver.find_element(:xpath, "/html/body/div[4]/div/div/div[2]/div[1]/div[2]/h5[2]").text
   puts "Web --> " + total_web_bill.to_s
   sleep 2
@@ -104,7 +120,6 @@ Then(/^I should be able to see my bill on app$/) do
   $wait.until { $driver.find_element(:css => "h5.col-tab-20.ng-binding").displayed? }
   $driver.find_element(:css, "h5.col-tab-20.ng-binding").click
   sleep 7
-  session="S1"
     if $Configuration[session+"DeviceType"] == "Android"
         set_default_device($session[session])
         sleep 2
