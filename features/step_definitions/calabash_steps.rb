@@ -43,8 +43,8 @@ session="S1"
           tap_mark 'btnMenu'
         elsif ops == "About"
           touch("* {text CONTAINS 'ABOUT'}")
-        elsif ops == "Start a new bill"
-          tap_mark "START A NEW BILL"
+        elsif ops == "Start a new tab"
+          tap_mark "START A NEW TAB"
         elsif ops == "My Account"
           touch("* {text CONTAINS 'MY ACCOUNT'}")
         elsif ops == "Wallet"
@@ -64,7 +64,7 @@ session="S1"
           end
           tap_mark 'btnFav'
         elsif ops == "Favourites"
-          touch("* {text CONTAINS 'FAVORITES'}")
+          touch("* {text CONTAINS 'FAVOURITES'}")
         else
            tap_mark "#{ops.to_s}"
            sleep 2
