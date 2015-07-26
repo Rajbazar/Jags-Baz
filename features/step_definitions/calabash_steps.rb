@@ -43,6 +43,8 @@ session="S1"
           tap_mark 'btnMenu'
         elsif ops == "About"
           touch("* {text CONTAINS 'ABOUT'}")
+        elsif ops == "Settings"
+          touch("* {text CONTAINS 'SETTINGS'}")
         elsif ops == "Start a new tab"
           tap_mark "START A NEW TAB"
         elsif ops == "My Account"
@@ -103,6 +105,10 @@ session="S1"
     else
       ios_connect(session)
       sleep 2
+    if element_exists("* text:'SKIP'")
+      tap_mark 'SKIP'
+      sleep 2
+    end
     if element_does_not_exist("* text:'SIGN UP'")
       tap_mark 'btnMenu'
       sleep 2
@@ -390,6 +396,7 @@ end
 Then(/^Open Url$/) do
   $driver.navigate.to "#{$Configuration["URL"]}"
   $driver.manage.window.maximize
+  sleep 15
 end
 
 Then(/^Enter PIN$/) do

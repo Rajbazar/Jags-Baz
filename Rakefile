@@ -23,15 +23,15 @@ task :runall do
       elsif feature != nil
         system("calabash-android run #{var[0]} --format html --out Android_Feature_#{feature}.html --format pretty Target=Android features/#{feature}.feature --tags @Android")
       else
-        system("calabash-android run #{var[0]} --format html --out AndroidReport.html --format pretty features/myaccount.feature features/about.feature features/payment.feature Target=Android")
+        system("calabash-android run #{var[0]} --format html --out AndroidReport.html --format pretty features/myaccount.feature features/about.feature features/payment.feature Target=Android --tags @Android")
       end
     elsif(device == "IOS")
       if tag != nil
         system("cucumber --format html --out IOS_Tag_#{tag}.html --format pretty Target=IOS --tags #{tag}")
       elsif feature != nil
-        system("cucumber --format html --out IOS_Feature_#{feature}.html --format pretty Target=IOS features/#{feature}.feature")
+        system("cucumber --format html --out IOS_Feature_#{feature}.html --format pretty Target=IOS --tags @IOS features/#{feature}.feature")
       else
-        system("cucumber --format html --out IOSReport.html --format pretty features/myaccount.feature features/about.feature features/payment.feature Target=IOS")
+        system("cucumber --format html --out IOSReport.html --format pretty --tags @IOS features/myaccount.feature features/about.feature features/payment.feature features/cleanup.feature Target=IOS")
       end
     end
   end

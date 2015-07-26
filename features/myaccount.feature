@@ -6,6 +6,8 @@ Feature: My Account
 @Android @IOS @Velocity-100
   Scenario: To create an account as a new user
     Given I am on Velocity app
+    When I tap on LoginButton
+    Then Change settings for DEVELOPMENT
      When I tap on SIGN UP
       And Verify signup screen
       And I enter Email
