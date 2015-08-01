@@ -28,6 +28,10 @@ session="S1"
             sleep 2
           end
           tap_mark 'butFavAnimator'
+        elsif ops == "Settings"
+          touch("* {text CONTAINS 'SETTINGS'}")
+        elsif ops == "DELETE ACCOUNT"
+          tap_mark 'Delete Account'
         else
            tap_mark "#{ops.to_s}"
         end
