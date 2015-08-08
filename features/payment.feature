@@ -13,8 +13,10 @@ Feature: Payment
     And Enter PIN
     Then select table number 5
     Then I add Breakfast item
-    Then I tap on Start a new bill
+    Then I tap on Start a new Table
     And I should be able to see my bill on app
+    Then I tap on CUSTOM
+    Then I enter tip-amount as 5
     And Complete Payment Process
     And Close Chrome
 
@@ -25,6 +27,8 @@ Feature: Payment
       Given user is Logged in Velocity app
       And I tap on MainMenu
       And I wait for 3 seconds
+      Then I tap on Account
+      And I wait for 2 seconds
       Then I tap on Wallet
       And I wait for 5 seconds
       And Verify Payment Methods
@@ -38,7 +42,7 @@ Feature: Payment
       Given user is Logged in Velocity app
       And I tap on MainMenu
       And I wait for 3 seconds
-      Then I tap on My Account
+      Then I tap on Account
       And I wait for 3 seconds
       Then I tap on Wallet
       And I wait for 5 seconds
@@ -53,24 +57,55 @@ Feature: Payment
     Given user is Logged in Velocity app
     And I tap on MainMenu
     And I wait for 3 seconds
+    Then I tap on Account
+    And I wait for 2 seconds
     When I tap on Receipts
     And I wait for 5 seconds
     Then I should able to see the list of RECENT VISITS
     And I tap on FirstReceipt
 
+@Android @Velocity-304
+  Scenario: Send receipts over mail
+    Given I am on Velocity app
+    Given user is Logged in Velocity app
+    And I tap on MainMenu
+    And I wait for 3 seconds
+    Then I tap on Account
+    And I wait for 2 seconds
+    When I tap on Receipts
+    And I wait for 5 seconds
+    Then I should able to see the list of RECENT VISITS
+    And I tap on FirstReceipt
+    And I tap on Request Email Receipt
+    Then Verify EmailReceiptPopup 
 
-@Android @Velocity-1302
+@IOS @Velocity-1302
   Scenario: Verify and manage to see the recipt listings for recent visits
     Given I am on Velocity app
     Given user is Logged in Velocity app
     And I tap on MainMenu
     And I wait for 3 seconds
-    Then I tap on My Account
+    Then I tap on Account
     And I wait for 3 seconds
     When I tap on Receipts
     And I wait for 5 seconds
     Then I should able to see the list of RECENT VISITS
     And I tap on FirstReceipt
+
+@IOS @Velocity-1304
+  Scenario: Verify and manage to see the recipt listings for recent visits
+    Given I am on Velocity app
+    Given user is Logged in Velocity app
+    And I tap on MainMenu
+    And I wait for 3 seconds
+    Then I tap on Account
+    And I wait for 3 seconds
+    When I tap on Receipts
+    And I wait for 5 seconds
+    Then I should able to see the list of RECENT VISITS
+    And I tap on FirstReceipt
+    And I tap on REQUEST EMAIL RECEIPT
+    Then Verify EmailReceiptPopup 
 
 
 @Android @Velocity-303

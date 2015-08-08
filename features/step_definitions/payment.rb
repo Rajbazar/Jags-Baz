@@ -162,8 +162,11 @@ Then(/^Complete Payment Process$/) do
     if $Configuration[session+"DeviceType"] == "Android"
         set_default_device($session[session])
         sleep 2
+        begin
         wait_for_element_exists("* id:'butPay'")
         tap_mark 'butPay'
+        rescue  
+        end
         wait_for_element_exists("* id:'butPayBill'")
         tap_mark 'butPayBill'
         sleep 10
@@ -178,8 +181,11 @@ Then(/^Complete Payment Process$/) do
     else
       ios_connect(session)
       sleep 5
-      tap_mark 'down'
-      sleep 5
+      begin
+          tap_mark 'down'
+          sleep 5
+      rescue 
+      end
       tap_mark 'btnPay'
       sleep 5
       tap_mark 'Pay'
@@ -332,5 +338,24 @@ Then(/^I should able to see the list of RECENT VISITS$/) do
     scroll("UITableView", :up)
     sleep 2
     p_arry(var)
+end
+end
+
+##Then I enter tip-amount as 5
+Then(/^I enter tip-amount as ([\d]+)$/) do |ops|
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 2
+        keyboard_enter_text "#{ops.to_s}"
+        sleep 2
+        tap_mark 'button1'
+    else
+    ios_connect(session)
+    sleep 2
+    wait_for_keyboard
+    keyboard_enter_text("#{ops.to_s}")  
+    sleep 2
+    tap_mark 'DONE'
 end
 end

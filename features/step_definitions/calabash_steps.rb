@@ -30,8 +30,22 @@ session="S1"
           tap_mark 'butFavAnimator'
         elsif ops == "Settings"
           touch("* {text CONTAINS 'SETTINGS'}")
+        elsif ops == "Account"
+          touch("* {text CONTAINS 'ACCOUNT'}")
+        elsif ops == "Receipts"
+          tap_mark 'RECEIPTS'
         elsif ops == "DELETE ACCOUNT"
           tap_mark 'Delete Account'
+        elsif ops == "Start a new Table"
+          tap_mark 'butNewTable'
+        elsif ops == "CUSTOM"
+        begin
+        wait_for_element_exists("* id:'butPay'")
+        tap_mark 'butPay'
+        rescue  
+        end
+        sleep 2
+        tap_mark 'CUSTOM'
         else
            tap_mark "#{ops.to_s}"
         end
@@ -49,10 +63,10 @@ session="S1"
           touch("* {text CONTAINS 'ABOUT'}")
         elsif ops == "Settings"
           touch("* {text CONTAINS 'SETTINGS'}")
-        elsif ops == "Start a new tab"
-          tap_mark "START A NEW TAB"
-        elsif ops == "My Account"
-          touch("* {text CONTAINS 'MY ACCOUNT'}")
+        elsif ops == "Start a new Table"
+          tap_mark "START A NEW CHECK"
+        elsif ops == "Account"
+          touch("* {text CONTAINS 'ACCOUNT'}")
         elsif ops == "Wallet"
           tap_mark 'WALLET'
         elsif ops == "AddCardButton"
@@ -71,6 +85,14 @@ session="S1"
           tap_mark 'btnFav'
         elsif ops == "Favourites"
           touch("* {text CONTAINS 'FAVOURITES'}")
+        elsif ops == "CUSTOM"
+          begin
+            tap_mark 'down'
+            sleep 5
+         rescue 
+         end
+            sleep 2
+          tap_mark 'CUSTOM'
         else
            tap_mark "#{ops.to_s}"
            sleep 2
@@ -175,6 +197,13 @@ session="S1"
             else
               fail('Element not found')
             end
+          elsif verifyText == "EmailReceiptPopup"
+              begin
+                 wait_for_element_exists("* {text CONTAINS 'receipt has been sent'}")
+                 puts 'Element found'
+            rescue
+                 screenshot_and_raise('Text Not Found')
+            end
         else
         end
     else
@@ -215,6 +244,14 @@ session="S1"
               tap_mark 'btnFavOn'
             end
           end
+        elsif verifyText == "EmailReceiptPopup"
+              begin
+                 wait_for_element_exists("* {text CONTAINS 'receipt has been sent'}")
+                 puts 'Element found'
+                 tap_mark 'OK'
+            rescue
+                 screenshot_and_raise('Text Not Found')
+            end
         else
         end
     end
