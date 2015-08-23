@@ -188,8 +188,13 @@ Then(/^Complete Payment Process$/) do
       end
       tap_mark 'btnPay'
       sleep 5
+      begin
+          tap_mark 'Continue with no gratuity'
+          sleep 2
+      rescue 
+      end
       tap_mark 'Pay'
-      sleep 7
+      sleep 15
       tap_mark '4 stars'
       sleep 2
       tap_mark 'btnDone'
@@ -358,4 +363,94 @@ Then(/^I enter tip-amount as ([\d]+)$/) do |ops|
     sleep 2
     tap_mark 'DONE'
 end
+end
+
+##And Complete Payment Process with Concur
+Then(/^Complete Payment Process with Concur$/) do 
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 2
+        begin
+        wait_for_element_exists("* id:'butPay'")
+        tap_mark 'butPay'
+        rescue  
+        end
+        wait_for_element_exists("* id:'butPayBill'")
+        tap_mark 'butPayBill'
+        sleep 10
+        wait_for_element_exists("* id:'butConfirmPayment'")
+        tap_mark 'butConfirmPayment'
+        wait_for_element_exists("* id:'rbRating'")
+        tap_mark 'rbRating'
+        wait_for_element_exists("* id:'butConfirm'")
+        tap_mark 'butConfirm'
+        wait_for_element_exists("* id:'butCloseThankYou'")
+        tap_mark 'butCloseThankYou'
+    else
+      ios_connect(session)
+      sleep 5
+      begin
+          tap_mark 'down'
+          sleep 5
+      rescue 
+      end
+      tap_mark 'btnPay'
+      sleep 3
+      begin
+          tap_mark 'Continue with no gratuity'
+          sleep 3
+      rescue 
+      end
+      sleep 5
+      if (query("UISwitch", :isOn)[0] == 0)
+        touch(query("UISwitch"))
+        sleep 4
+      end
+      tap_mark 'MEMO'
+      sleep 2
+      clear_text('UITextField')
+      sleep 2
+      touch(query("UITextField")[0])
+      wait_for_keyboard 
+      keyboard_enter_text("Emp_random1234")
+      sleep 2
+      tap_mark 'SAVE'
+      sleep 5
+      tap_mark 'Pay'
+      sleep 15
+      tap_mark '4 stars'
+      sleep 2
+      tap_mark 'btnDone'
+      sleep 5
+      tap_mark 'btnCloseMap'
+end
+end
+
+##And pay using Concur
+Then(/^pay using Concur$/) do 
+  session="S1"
+    if $Configuration[session+"DeviceType"] == "Android"
+        set_default_device($session[session])
+        sleep 2
+    else
+      ios_connect(session)
+      sleep 5
+      tap_mark 'SEND RECEIPT TO EXPENSES'
+      sleep 3
+      tap_mark 'Concur'
+      sleep 3
+      tap_mark 'Yes'
+      sleep 3
+      clear_text('UITextField')
+      sleep 2
+      touch(query("UITextField")[0])
+      wait_for_keyboard 
+      keyboard_enter_text("Emp_random1234")
+      sleep 2
+      tap_mark 'SAVE'
+      sleep 5
+      check_element_exists("* text:'RECEIPT HAS BEEN EXPENSED'")
+      sleep 2
+    end
 end

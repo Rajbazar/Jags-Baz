@@ -4,7 +4,7 @@ Feature: Payment
   So that I can able to pay  
 
   @Android @IOS @Velocity-300
-  Scenario: Verify total bill on app and web
+  Scenario: Verify total bill on app and web (with tip)
     Given I am on Velocity app
     Given user is Logged in Velocity app
     And I select venue as AMIKA
@@ -20,6 +20,20 @@ Feature: Payment
     And Complete Payment Process
     And Close Chrome
 
+@IOS @Velocity-330
+  Scenario: Verify total bill on app and web (with tip)
+    Given I am on Velocity app
+    Given user is Logged in Velocity app
+    And I select venue as AMIKA
+    Given Chrome is launched
+    And Open Url
+    And Enter PIN
+    Then select table number 5
+    Then I add Breakfast item
+    Then I tap on Start a new Table
+    And I should be able to see my bill on app
+    And Complete Payment Process
+    And Close Chrome
 
   @Android @Velocity-301
   Scenario: updating and verifying the card details
@@ -134,3 +148,36 @@ Feature: Payment
       And I wait for 5 seconds
       And Verify Favourites listings            
   
+  @IOS @Velocity-1305
+  Scenario: Payment using concur
+    Given I am on Velocity app
+    Given user is Logged in Velocity app
+    And I select venue as AMIKA
+    Given Chrome is launched
+    And Open Url
+    And Enter PIN
+    Then select table number 5
+    Then I add Breakfast item
+    Then I tap on Start a new Table
+    And I should be able to see my bill on app
+    And Complete Payment Process with Concur
+    And Close Chrome
+
+
+  @IOS @Velocity-1306
+  Scenario: Payment using concur from previous receipts
+    Given I am on Velocity app
+    
+    And Complete Payment Process
+    And I wait for 5 seconds
+    And I tap on MainMenu
+    And I wait for 3 seconds
+    Then I tap on Account
+    And I wait for 2 seconds
+    When I tap on Receipts
+    And I wait for 5 seconds
+    And I tap on FirstReceipt
+    And I wait for 2 seconds
+    And pay using Concur
+    And Close Chrome
+
