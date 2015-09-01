@@ -111,7 +111,8 @@ Then(/^I should be able to see my bill on app$/) do
           sleep 2
         end
   end
-  total_web_bill=$driver.find_element(:xpath, "/html/body/div[4]/div/div/div[2]/div[1]/div[2]/h5[2]").text
+  sleep 5
+  total_web_bill=$driver.find_element(:xpath, "/html/body/div[5]/div/div/div[2]/div[1]/div[2]/h5[2]").text
   puts "Web --> " + total_web_bill.to_s
   sleep 2
   bill_float=total_web_bill.gsub(/TOTAL: £/,'').to_f
@@ -140,7 +141,7 @@ Then(/^I should be able to see my bill on app$/) do
       i=0
       while (i<var.length)
         if (query("*", :text)[i] == "Paid:")
-          app_bill=query("*", :text)[i+7]
+          app_bill=query("*", :text)[i+4]
           break
          else
           i+=1
@@ -251,7 +252,9 @@ Then(/^Delete my card-details$/) do
         start_test_server_in_background
         system("#{default_device.adb_command} shell input keyevent KEYCODE_ENTER")
         sleep 2
-        tap_mark 'Wallet'
+         touch("* {text CONTAINS 'ACCOUNT'}")
+         sleep 3
+        tap_mark 'WALLET'
         sleep 5
         if element_exists("* text:'This is your default payment method'")
           perform_action('swipe', 'left')

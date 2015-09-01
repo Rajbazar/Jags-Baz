@@ -64,7 +64,7 @@ session="S1"
         elsif ops == "Settings"
           touch("* {text CONTAINS 'SETTINGS'}")
         elsif ops == "Start a new Table"
-          tap_mark "START A NEW CHECK"
+          tap_mark "START A NEW TAB"
         elsif ops == "Account"
           touch("* {text CONTAINS 'ACCOUNT'}")
         elsif ops == "Wallet"
@@ -424,7 +424,7 @@ Then(/^Display text in ([\w ]+)$/) do |ops|
     ios_connect(session)
     sleep 3
     if ops == "AppVersion"
-        puts "App Version: " + query("UILabel", :text)[5].to_s
+        puts "App Version: " + query("UILabel", :text)[1].to_s
       else
       end 
   end  
@@ -447,6 +447,13 @@ $driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][1]+"]").click
 $driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][2]+"]").click
 $driver.find_element(:xpath, "//button["+$Configuration["WebPIN"][3]+"]").click
 sleep 5
+end
+
+Then(/^Login ([\w ]+)$/) do |ops|
+  Selenium::WebDriver::Support::Select.new($driver.find_element(:id, "venue")).select_by(:text, "#{ops.to_s}")
+  sleep 2
+  $driver.find_element(:css, "div.submit.btn-primary").click
+  sleep 5
 end
 
 Then(/^Close Chrome$/) do
@@ -482,3 +489,4 @@ Then(/^I scroll venue to right$/) do
     swipe :right, force: :strong
   end  
 end
+

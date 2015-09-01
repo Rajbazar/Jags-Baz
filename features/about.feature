@@ -15,9 +15,9 @@ Feature: About
   @Android @IOS @Velocity-201
   Scenario: Selenium Test
   Given Chrome is launched
-  And Open Url
-  And Enter PIN
-  And Close Chrome
+    And Open Url
+    And Login Amika
+    And Close Chrome
 
 
         

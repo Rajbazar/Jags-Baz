@@ -43,7 +43,7 @@ Feature: Payment
       And I wait for 3 seconds
       Then I tap on Account
       And I wait for 2 seconds
-      Then I tap on Wallet
+      Then I tap on WALLET
       And I wait for 5 seconds
       And Verify Payment Methods
       When I tap on AddCardButton
@@ -149,13 +149,13 @@ Feature: Payment
       And Verify Favourites listings            
   
   @IOS @Velocity-1305
-  Scenario: Payment using concur
+  Scenario: Payment flow after adding Concur ability to add expense memo and Expense code
     Given I am on Velocity app
     Given user is Logged in Velocity app
     And I select venue as AMIKA
     Given Chrome is launched
     And Open Url
-    And Enter PIN
+    And Login Amika
     Then select table number 5
     Then I add Breakfast item
     Then I tap on Start a new Table
@@ -167,8 +167,6 @@ Feature: Payment
   @IOS @Velocity-1306
   Scenario: Payment using concur from previous receipts
     Given I am on Velocity app
-    
-    And Complete Payment Process
     And I wait for 5 seconds
     And I tap on MainMenu
     And I wait for 3 seconds
@@ -179,5 +177,4 @@ Feature: Payment
     And I tap on FirstReceipt
     And I wait for 2 seconds
     And pay using Concur
-    And Close Chrome
 
