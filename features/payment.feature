@@ -148,7 +148,8 @@ Feature: Payment
       And I wait for 5 seconds
       And Verify Favourites listings            
   
-  @IOS @Velocity-1305
+
+  @IOS @Android @Velocity-1305
   Scenario: Payment flow after adding Concur ability to add expense memo and Expense code
     Given I am on Velocity app
     Given user is Logged in Velocity app
@@ -164,7 +165,7 @@ Feature: Payment
     And Close Chrome
 
 
-  @IOS @Velocity-1306
+  @IOS @Android @Velocity-1306
   Scenario: Payment using concur from previous receipts
     Given I am on Velocity app
     And I wait for 5 seconds

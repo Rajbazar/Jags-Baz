@@ -379,9 +379,24 @@ Then(/^Complete Payment Process with Concur$/) do
         tap_mark 'butPay'
         rescue  
         end
+        sleep 5
         wait_for_element_exists("* id:'butPayBill'")
         tap_mark 'butPayBill'
         sleep 10
+        if (!query("* id:'expense_switch'", :isChecked)[0])
+          tap_mark 'expense_switch'
+          sleep 4
+        end
+        tap_mark 'MEMO'
+        sleep 2
+        query("* id:'memo_edittext_title'", setText: '')
+        query("* id:'memo_edittext_title'", setText: 'Emp_random1234')
+        sleep 2
+        query("* id:'memo_edittext_description'", setText: '')
+        query("* id:'memo_edittext_description'", setText: 'Memo Expenses')
+        sleep 2
+        tap_mark 'SAVE'
+        sleep 3
         wait_for_element_exists("* id:'butConfirmPayment'")
         tap_mark 'butConfirmPayment'
         wait_for_element_exists("* id:'rbRating'")
@@ -435,6 +450,20 @@ Then(/^pay using Concur$/) do
   session="S1"
     if $Configuration[session+"DeviceType"] == "Android"
         set_default_device($session[session])
+        sleep 5
+        tap_mark 'butSendReceiptExpenseManager'
+        sleep 3
+        tap_mark 'Yes'
+        sleep 3
+        query("* id:'memo_edittext_title'", setText: '')
+        query("* id:'memo_edittext_title'", setText: 'Emp_random1234')
+        sleep 2
+        query("* id:'memo_edittext_description'", setText: '')
+        query("* id:'memo_edittext_description'", setText: 'Memo Expenses')
+        sleep 2
+        tap_mark 'SAVE'
+        sleep 5
+        check_element_exists("* text:'Receipt was already sent'")
         sleep 2
     else
       ios_connect(session)
