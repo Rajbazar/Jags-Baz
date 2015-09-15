@@ -136,7 +136,9 @@ Then(/^I should be able to see my bill on app$/) do
         end  
     else
       ios_connect(session)
-      sleep 12
+      sleep 5
+      tap_mark 'btnDone'
+      sleep 15
       var = query("*", :text)
       i=0
       while (i<var.length)
@@ -194,7 +196,6 @@ Then(/^Complete Payment Process$/) do
           sleep 2
       rescue 
       end
-      tap_mark 'Pay'
       sleep 15
       tap_mark '4 stars'
       sleep 2
