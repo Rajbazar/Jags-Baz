@@ -123,7 +123,10 @@ Then(/^I should be able to see my bill on app$/) do
   sleep 7
     if $Configuration[session+"DeviceType"] == "Android"
         set_default_device($session[session])
-        sleep 2
+        sleep 5
+        wait_for_element_exists("* id:'butConfirmPayment'")
+        tap_mark 'butConfirmPayment'
+        sleep 15
         wait_for_element_exists("* id:'tvBillTotal'")
         sleep 7
         app_bill=query("* id:'tvBillTotal'", :text)[0]
@@ -173,8 +176,6 @@ Then(/^Complete Payment Process$/) do
         wait_for_element_exists("* id:'butPayBill'")
         tap_mark 'butPayBill'
         sleep 10
-        wait_for_element_exists("* id:'butConfirmPayment'")
-        tap_mark 'butConfirmPayment'
         wait_for_element_exists("* id:'rbRating'")
         tap_mark 'rbRating'
         wait_for_element_exists("* id:'butConfirm'")

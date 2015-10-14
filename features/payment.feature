@@ -10,7 +10,7 @@ Feature: Payment
     And I select venue as AMIKA
     Given Chrome is launched
     And Open Url
-    And Enter PIN
+    And Login Amika
     Then select table number 5
     Then I add Breakfast item
     Then I tap on Start a new Table
